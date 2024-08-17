@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
@@ -8,32 +9,32 @@ public class Tornado : MonoBehaviour
 {
     Rigidbody2D rb;
     public float speed;
-    public bool ShouldMove;
     public Vector2 vel;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = Random.insideUnitCircle * speed;
+        rb.velocity = Random.insideUnitCircle.normalized * speed;
         vel = rb.velocity;
     }
 
-    private void Update()
+    public void Stop()
     {
-        // if (ShouldMove)
-        // {
-        //     rb.velocity = transform.up * speed;
-        // }
-        // else
-        // {
-        //     rb.velocity = Vector2.zero;
-        // }
+        rb.velocity = Vector2.zero;
+    }
+
+    public void Go()
+    {
+        rb.velocity = vel;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Oh... this existed lol...
-        rb.velocity = Vector2.Reflect(vel, collision.GetContact(0).normal);
-        vel = rb.velocity;
+        if (collision.gameObject.tag == "bounceOf")
+        {
+            //Oh... this existed lol
+            rb.velocity = Vector2.Reflect(vel, collision.GetContact(0).normal);
+            vel = rb.velocity;
+        }
     }
 }
