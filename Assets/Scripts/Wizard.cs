@@ -18,7 +18,7 @@ public class wizard : MonoBehaviour
     public LineRenderer line;
 
     [Header("Debug")]
-    private GameObject currentReflector;
+    public GameObject currentReflector;
 
     private void Start()
     {
@@ -34,19 +34,19 @@ public class wizard : MonoBehaviour
         {
             line.enabled = true;
             Shoot(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            currentReflector.GetComponent<Reflector>().chosen = true;
         }
 
-        if (Input.GetMouseButton(0))
-        {
-            line.SetPosition(0, transform.position);
-            line.SetPosition(1, currentReflector.transform.position);
-        }
-        else if (currentReflector != null)
-        {
-            line.enabled = false;
-            currentReflector.GetComponent<Reflector>().placed = true;
-            currentReflector = null;
-        }
+        // if (Input.GetMouseButton(0))
+        // {
+        //     line.SetPosition(0, transform.position);
+        //     line.SetPosition(1, currentReflector.transform.position);
+        // }
+        // else if (currentReflector != null)
+        // {
+        //     line.enabled = false;
+        //     currentReflector = null;
+        // }
 
         rb.velocity = new Vector2(dirX, dirY) * speed;
     }
