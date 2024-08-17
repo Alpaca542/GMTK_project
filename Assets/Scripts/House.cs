@@ -5,6 +5,8 @@ using UnityEngine;
 public class House : MonoBehaviour
 {
     private ManagePoints mngPoints;
+    public bool Bad;
+
     private void Start()
     {
         mngPoints = GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>();
@@ -14,8 +16,11 @@ public class House : MonoBehaviour
     {
         if (collider.CompareTag("Tornado"))
         {
-            mngPoints.MinusHouse();
-            Destroy(gameObject);
+            if (Bad)
+            {
+                mngPoints.MinusHouse();
+                Destroy(gameObject);
+            }
         }
     }
 }

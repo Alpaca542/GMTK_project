@@ -14,6 +14,8 @@ public class ManagePoints : MonoBehaviour
     public TMP_Text housesDestroyedGoalTxt;
     public TMP_Text carsDestroyedGoalTxt;
 
+    public Gradient goodBarColors;
+
     private void UpdateText()
     {
         housesDestroyedGoalTxt.text = housesDestroyed.ToString() + "/" + housesDestroyedGoal.ToString();

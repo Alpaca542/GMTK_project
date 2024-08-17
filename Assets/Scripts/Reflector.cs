@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.EventSystems;
-using Unity.VisualScripting;
 
 public class Reflector : MonoBehaviour
 {
-    public bool chosen;
-    private bool pointerOver;
     public int myType;
-    public GameObject myFlag;
-    private float currentVelocity;
     private float JustHit;
+
+    private void Update()
+    {
+        JustHit -= Time.deltaTime;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,6 +35,11 @@ public class Reflector : MonoBehaviour
     {
         gmb.transform.DOScale(gmb.transform.localScale * 0.8f, 0.5f);
         gmb.GetComponent<Tornado>().Go();
+
+        if (gmb.transform.localScale.x < 0.5f)
+        {
+            //no hole
+        }
     }
 
     void Grow(GameObject gmb)
