@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tornado
   - bounceOf
+  - mngPoints
   layers:
   - Default
   - TransparentFX
