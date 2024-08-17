@@ -32,8 +32,7 @@ public class Tornado : MonoBehaviour
     {
         if (collision.gameObject.tag == "bounceOf")
         {
-            //Oh... this existed lol
-            rb.velocity = Vector2.Reflect(vel, collision.GetContact(0).normal);
+            rb.velocity = Vector2.Reflect(vel, collision.GetContact(0).normal).normalized * speed;
             vel = rb.velocity;
         }
     }
