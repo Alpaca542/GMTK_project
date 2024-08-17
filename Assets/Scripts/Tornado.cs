@@ -8,6 +8,7 @@ public class Tornado : MonoBehaviour
 {
     Rigidbody2D rb;
     public float speed;
+    public bool ShouldMove;
     public Vector2 vel;
 
     private void Start()
@@ -19,11 +20,19 @@ public class Tornado : MonoBehaviour
 
     private void Update()
     {
-
+        // if (ShouldMove)
+        // {
+        //     rb.velocity = transform.up * speed;
+        // }
+        // else
+        // {
+        //     rb.velocity = Vector2.zero;
+        // }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Oh... this existed lol...
         rb.velocity = Vector2.Reflect(vel, collision.GetContact(0).normal);
         vel = rb.velocity;
     }

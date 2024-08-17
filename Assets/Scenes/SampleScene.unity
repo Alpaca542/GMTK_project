@@ -611,6 +611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  ShouldMove: 1
   vel: {x: 0, y: 0}
 --- !u!50 &1042994776
 Rigidbody2D:
