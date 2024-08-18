@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class ManageGame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Slider destrBar;
+    public int AmountOfGood;
+    public int AmountOfBad;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        destrBar.maxValue = AmountOfBad + AmountOfGood;
+        destrBar.value = AmountOfGood;
+    }
+    public void UpdateCounter()
+    {
+        destrBar.DOValue(AmountOfGood, (AmountOfGood - destrBar.value) / 5);
     }
 }
