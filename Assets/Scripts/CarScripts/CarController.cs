@@ -32,7 +32,7 @@ public class CarController : GoodThing
     void LookAt(Vector3 what)
     {
         Vector2 movement = what - transform.position;
-        float targetAngle = Mathf.Atan2(-movement.x, movement.y) * Mathf.Rad2Deg + 90;
+        float targetAngle = Mathf.Atan2(-movement.x, movement.y) * Mathf.Rad2Deg + 180;
         float smoothedAngle = Mathf.SmoothDampAngle(transform.eulerAngles.z, targetAngle, ref currentVelocity, 0.1f);
         transform.rotation = Quaternion.Euler(0, 0, smoothedAngle);
     }

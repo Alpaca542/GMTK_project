@@ -17969,11 +17969,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPrefab:
-  - {fileID: 294379388677614241, guid: 6851a54dff22952439db36fd3c2d87e2, type: 3}
-  - {fileID: 5980691986933010195, guid: ea4d3413d77384a04a1b355769ccbcc6, type: 3}
-  - {fileID: 5759745967858392660, guid: 723692dda593c4e26b1d91bb312d56dd, type: 3}
   - {fileID: 8709376976593213782, guid: 8802642705480418cacc3a02ffee6694, type: 3}
   - {fileID: 8973654154740471514, guid: 4cf297fe6274e431b94412b2aa48cdbb, type: 3}
+  - {fileID: 5759745967858392660, guid: 723692dda593c4e26b1d91bb312d56dd, type: 3}
   points:
   - {fileID: 149514777}
   - {fileID: 240211261}
