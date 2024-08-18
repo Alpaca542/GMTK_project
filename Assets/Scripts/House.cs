@@ -16,7 +16,8 @@ public class House : MonoBehaviour
     [SerializeField] private float runSpeed = 3f;
     [SerializeField] private float respawnCooldown = 10f;
 
-    public int Bad;
+    private int Bad;
+    public int myValue;
     public Tornado tornado;
     private ManagePoints mngPoints;
     public Vector3 ScaleFactor;
@@ -82,6 +83,14 @@ public class House : MonoBehaviour
             {
                 Grow(collider.gameObject);
                 //spawm particles
+                GameObject.FindGameObjectWithTag("MngPoints").GetComponent<ManagePoints>().getPoints(myValue);
+                Destroy(gameObject);
+            }
+            else
+            {
+                Grow(collider.gameObject);
+                //spawm particles
+                GameObject.FindGameObjectWithTag("MngPoints").GetComponent<ManagePoints>().loosePoints(myValue);
                 Destroy(gameObject);
             }
         }
