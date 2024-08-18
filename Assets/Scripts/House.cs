@@ -36,7 +36,6 @@ public class House : MonoBehaviour
         }
 
         mngPoints = GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>();
-        Debug.Log(mngPoints);
         ScaleFactor = new Vector3(changeSize, changeSize, 0);
         tornado = FindObjectOfType<Tornado>();
 

@@ -5,7 +5,7 @@ public class CarController : MonoBehaviour
     [Header("Car Settings")]
     [SerializeField] private float speed = 7f;
 
-    private Transform[] points;
+    public Transform[] points;
 
     private int currentPoint;
 
