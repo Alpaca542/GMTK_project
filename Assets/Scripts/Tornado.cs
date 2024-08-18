@@ -8,6 +8,7 @@ using UnityEngine;
 public class Tornado : MonoBehaviour
 {
     Rigidbody2D rb;
+    public Grid destructableGrid;
     public float speed;
     public Vector2 vel;
 
@@ -37,4 +38,12 @@ public class Tornado : MonoBehaviour
         }
 
     }
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.gameObject.tag == "bounceOf")
+    //     {
+    //         rb.velocity = Vector2.Reflect(vel, collision.GetContact(0).normal).normalized * speed;
+    //         vel = rb.velocity;
+    //     }
+    // }
 }

@@ -17,6 +17,7 @@ public class House : MonoBehaviour
 
     public bool Bad;
     public Tornado tornado;
+    private ManagePoints mngPoints;
 
     private float timeSinceLastSpawn;
 
@@ -66,11 +67,7 @@ public class House : MonoBehaviour
             if (Bad)
             {
                 Destroy(gameObject);
-<<<<<<< Updated upstream
                 mngPoints.MinusBadHouse();
-=======
-                //mngPoints.MinusBadHouse(); 
->>>>>>> Stashed changes
             }
         }
     }
