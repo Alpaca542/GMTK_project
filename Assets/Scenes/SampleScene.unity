@@ -1495,7 +1495,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1545,7 +1545,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.59, y: 7.43, z: -10}
+  m_LocalPosition: {x: -16.71, y: 2.33, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18674,7 +18674,7 @@ TilemapCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -18916,10 +18916,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   housesDestroyedGoal: 1
   carsDestroyedGoal: 1
-  housesDestroyed: 0
-  carsDestroyed: 0
-  housesDestroyedGoalTxt: {fileID: 1258393408}
-  carsDestroyedGoalTxt: {fileID: 850790048}
+  badHouses: 0
+  badCars: 0
   goodBarColors:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -19294,11 +19292,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8374702764816618592, guid: ec179ba5538ec4d418b2f8729c248671, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.12
+      value: -21.53
       objectReference: {fileID: 0}
     - target: {fileID: 8374702764816618592, guid: ec179ba5538ec4d418b2f8729c248671, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.18
+      value: 1.48
       objectReference: {fileID: 0}
     - target: {fileID: 8374702764816618592, guid: ec179ba5538ec4d418b2f8729c248671, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19354,11 +19352,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4991026066322877471, guid: 02fc228a69900954e96b921b0faa50f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.13
+      value: -18.75
       objectReference: {fileID: 0}
     - target: {fileID: 4991026066322877471, guid: 02fc228a69900954e96b921b0faa50f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.26
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 4991026066322877471, guid: 02fc228a69900954e96b921b0faa50f5, type: 3}
       propertyPath: m_LocalPosition.z

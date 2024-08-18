@@ -28,7 +28,15 @@ public class Tornado : MonoBehaviour
     {
         rb.velocity = vel;
     }
-
+    void FixedUpdate()
+    {
+        transform.localScale -= new Vector3(0.1f, 0.1f, 0) * Time.fixedDeltaTime;
+        if (transform.localScale.x <= 0.1f)
+        {
+            Destroy(gameObject);
+            //lose
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "bounceOf")
@@ -36,9 +44,5 @@ public class Tornado : MonoBehaviour
             rb.velocity = Vector2.Reflect(vel, collision.GetContact(0).normal).normalized * speed;
             vel = rb.velocity;
         }
-
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
     }
 }
