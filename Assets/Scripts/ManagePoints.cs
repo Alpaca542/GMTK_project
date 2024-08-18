@@ -5,6 +5,8 @@ using TMPro;
 
 public class ManagePoints : MonoBehaviour
 {
+    public int points;
+
     public int housesDestroyedGoal;
     public int carsDestroyedGoal;
 
@@ -14,4 +16,14 @@ public class ManagePoints : MonoBehaviour
     public Gradient goodBarColors;
 
     public ManageGame gmMng;
+
+    public void loosePoints(int howMany)
+    {
+        points += howMany;
+    }
+
+    public void getPoints(int howMany)
+    {
+        points -= howMany;
+    }
 }

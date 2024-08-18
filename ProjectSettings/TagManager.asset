@@ -8,6 +8,8 @@ TagManager:
   - bounceOf
   - mngPoints
   - road
+  - HousePoints
+  - BigHousePoints
   layers:
   - Default
   - TransparentFX

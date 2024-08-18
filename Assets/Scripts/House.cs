@@ -16,7 +16,8 @@ public class House : MonoBehaviour
     [SerializeField] private float runSpeed = 3f;
     [SerializeField] private float respawnCooldown = 10f;
 
-    public int Bad;
+    private int Bad;
+    public int myValue;
     public Tornado tornado;
     private ManagePoints mngPoints;
     public Vector3 ScaleFactor;
@@ -31,11 +32,10 @@ public class House : MonoBehaviour
 
         if (Bad == 1)
         {
-            transform.localScale = new Vector2(transform.localScale.x * Random.Range(0.8f, 1.2f), transform.localScale.y * Random.Range(0.8f, 1.2f));
+            //transform.localScale = new Vector2(transform.localScale.x * Random.Range(0.3f, 1.8f), transform.localScale.y * Random.Range(0.3f, 1.8f));
         }
 
         mngPoints = GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>();
-        Debug.Log(mngPoints);
         ScaleFactor = new Vector3(changeSize, changeSize, 0);
         tornado = FindObjectOfType<Tornado>();
 
@@ -82,6 +82,14 @@ public class House : MonoBehaviour
             {
                 Grow(collider.gameObject);
                 //spawm particles
+                GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().getPoints(myValue);
+                Destroy(gameObject);
+            }
+            else
+            {
+                Grow(collider.gameObject);
+                //spawm particles
+                GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().loosePoints(myValue);
                 Destroy(gameObject);
             }
         }
