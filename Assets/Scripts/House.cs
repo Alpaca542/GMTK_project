@@ -19,7 +19,7 @@ public class House : MonoBehaviour
             if (Bad)
             {
                 Destroy(gameObject);
-                mngPoints.MinusHouse(); 
+                mngPoints.MinusBadHouse();
             }
         }
     }
