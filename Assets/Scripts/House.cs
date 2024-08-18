@@ -27,7 +27,7 @@ public class House : GoodThing
         
         if (Bad == 1)
         {
-            transform.localScale = new Vector2(transform.localScale.x * Random.Range(0.3f, 1.8f), transform.localScale.y * Random.Range(0.3f, 1.8f));
+            //transform.localScale = new Vector2(transform.localScale.x * Random.Range(0.3f, 1.8f), transform.localScale.y * Random.Range(0.3f, 1.8f));
         }
 
         tornado = FindObjectOfType<Tornado>();
