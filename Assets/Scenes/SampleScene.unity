@@ -41198,7 +41198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   rb: {fileID: 1701924994}
-  wand: {fileID: 0}
+  wand: {fileID: 1258880744}
   currentReflector: {fileID: 0}
 --- !u!61 &1701924993
 BoxCollider2D:

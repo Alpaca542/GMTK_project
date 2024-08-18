@@ -29,7 +29,7 @@ public class wizard : MonoBehaviour
         float dirY = Input.GetAxis("Vertical");
         if (Input.GetMouseButton(0))
         {
-            wand.SetActive(true);
+            wand.SetActive(!wand.activeSelf);
         }
 
         rb.velocity = new Vector2(dirX, dirY) * speed;
