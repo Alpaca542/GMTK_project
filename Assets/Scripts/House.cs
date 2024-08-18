@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class House : MonoBehaviour
 {
@@ -18,11 +19,17 @@ public class House : MonoBehaviour
     public bool Bad;
     public Tornado tornado;
     private ManagePoints mngPoints;
+    public Vector3 ScaleFactor;
+    [SerializeField] public float changeSize = 0.2f;
+    [SerializeField] public float changeMas = 0.2f;
 
     private float timeSinceLastSpawn;
 
     private void Start()
     {
+        mngPoints = GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>();
+        Debug.Log(mngPoints);
+        ScaleFactor = new Vector3(changeSize, changeSize, 0);
         tornado = FindObjectOfType<Tornado>();
 
         if (tornado == null)
@@ -66,9 +73,15 @@ public class House : MonoBehaviour
         {
             if (Bad)
             {
-                Destroy(gameObject);
+                Grow(collider.gameObject);
                 mngPoints.MinusBadHouse();
+                Destroy(gameObject);
             }
         }
+    }
+    void Grow(GameObject gmb)
+    {
+        gmb.transform.DOScale(gmb.transform.localScale + ScaleFactor, 0.5f);
+        gmb.GetComponent<Rigidbody2D>().mass += 0.2f;
     }
 }
