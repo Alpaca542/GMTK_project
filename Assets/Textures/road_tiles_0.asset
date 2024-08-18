@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: city_tiles_0
+  m_Name: road_tiles_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -133915510, guid: bc5f05e5a5ade48e3bf8d2738ce19488, type: 3}
+  m_Sprite: {fileID: -1107646131, guid: b75e6099c36ab4429984b0dfaedac0ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -11,7 +11,7 @@ public class GenerateMap : MonoBehaviour
 
         foreach (GameObject gmb in places)
         {
-            Instantiate(houses[Random.Range(0, houses.Length)], gmb.transform.position, Quaternion.identity);
+            Instantiate(houses[Random.Range(0, houses.Length)], gmb.transform.position, gmb.transform.rotation);
         }
     }
 }
