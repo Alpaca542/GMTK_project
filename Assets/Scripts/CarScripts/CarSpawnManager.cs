@@ -7,6 +7,7 @@ public class CarSpawnManager : MonoBehaviour
     [Header("Car Settings")]
     [SerializeField] private GameObject carPrefab; // The car prefab to spawn
     [SerializeField] private Transform[] points; // The points for the car
+    [SerializeField] private float chanceOfBadCar;
 
     [Header("Spawn Settings")]
     [SerializeField] private float spawnInterval = 5f; // Time between spawns
@@ -19,7 +20,6 @@ public class CarSpawnManager : MonoBehaviour
 
     private void SpawnCar()
     {
-        //Instantiate a new car at the start point
         GameObject newCar = Instantiate(carPrefab, transform.position, Quaternion.identity);
         newCar.GetComponent<CarController>().points = points;
     }
