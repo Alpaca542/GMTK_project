@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
         increasing = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         scale += increasing ? 0.05f : -0.05f;

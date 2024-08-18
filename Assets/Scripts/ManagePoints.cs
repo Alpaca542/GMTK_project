@@ -16,6 +16,8 @@ public class ManagePoints : MonoBehaviour
 
     public Gradient goodBarColors;
 
+    public ManageGame gmMng;
+
     private void UpdateText()
     {
         housesDestroyedGoalTxt.text = housesDestroyed.ToString() + "/" + housesDestroyedGoal.ToString();
@@ -28,15 +30,19 @@ public class ManagePoints : MonoBehaviour
         }
     }
 
-    public void MinusHouse()
+    public void MinusBadHouse()
     {
         housesDestroyed++;
+        gmMng.AmountOfGood++;
+        gmMng.UpdateCounter();
         UpdateText();
     }
 
-    public void MinusCar()
+    public void MinusBadCar()
     {
         carsDestroyed++;
+        gmMng.AmountOfGood++;
+        gmMng.UpdateCounter();
         UpdateText();
     }
 }

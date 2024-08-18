@@ -33,8 +33,8 @@ public class Reflector : MonoBehaviour
 
     void Shrink(GameObject gmb)
     {
-        gmb.transform.DOScale(gmb.transform.localScale * 0.8f, 0.5f);
-        gmb.GetComponent<Tornado>().Go();
+        gmb.transform.DOScale(gmb.transform.localScale - new Vector3(0.2f, 0.2f, 0), 0.5f);
+        gmb.GetComponent<Rigidbody2D>().mass -= 0.2f;
 
         if (gmb.transform.localScale.x < 0.5f)
         {
@@ -44,7 +44,7 @@ public class Reflector : MonoBehaviour
 
     void Grow(GameObject gmb)
     {
-        gmb.transform.DOScale(gmb.transform.localScale * 1.2f, 0.5f);
-        gmb.GetComponent<Tornado>().Go();
+        gmb.transform.DOScale(gmb.transform.localScale + new Vector3(0.2f, 0.2f, 0), 0.5f);
+        gmb.GetComponent<Rigidbody2D>().mass += 0.2f;
     }
 }
