@@ -25,13 +25,21 @@ public class wizard : MonoBehaviour
 
     void Update()
     {
+        HandleMovement();
+        HandleWandToggle();
+
+    }
+
+    private void HandleMovement() {
         float dirX = Input.GetAxis("Horizontal");
         float dirY = Input.GetAxis("Vertical");
+        rb.velocity = new Vector2(dirX, dirY) * speed;
+    }
+
+    private void HandleWandToggle() {
         if (Input.GetMouseButton(0))
         {
             wand.SetActive(!wand.activeSelf);
         }
-
-        rb.velocity = new Vector2(dirX, dirY) * speed;
     }
 }

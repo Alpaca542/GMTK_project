@@ -35,5 +35,6 @@ public class Tornado : MonoBehaviour
             rb.velocity = Vector2.Reflect(vel, collision.GetContact(0).normal).normalized * speed;
             vel = rb.velocity;
         }
+
     }
 }
