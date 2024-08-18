@@ -13,7 +13,6 @@ public class wizard : MonoBehaviour
 
     [Header("Fields")]
     public Rigidbody2D rb;
-    public Animator anim;
     public GameObject wand;
 
     [Header("Debug")]
@@ -26,55 +25,21 @@ public class wizard : MonoBehaviour
 
     void Update()
     {
+        HandleMovement();
+        HandleWandToggle();
+
+    }
+
+    private void HandleMovement() {
         float dirX = Input.GetAxis("Horizontal");
         float dirY = Input.GetAxis("Vertical");
+        rb.velocity = new Vector2(dirX, dirY) * speed;
+    }
 
-        float dirXRaw = Input.GetAxisRaw("Horizontal");
-        float dirYRaw = Input.GetAxisRaw("Vertical");
-
-        if (Mathf.Abs(dirXRaw) > 0 || Mathf.Abs(dirYRaw) > 0)
-        {
-            if (Mathf.Abs(dirYRaw) > 0)
-            {
-                if (dirYRaw > 0)
-                {
-                    anim.SetBool("GoRight", false);
-                    anim.SetBool("GoLeft", false);
-                    anim.SetBool("GoUp", true);
-                    anim.SetBool("GoDown", false);
-                }
-                else
-                {
-                    anim.SetBool("GoRight", false);
-                    anim.SetBool("GoLeft", false);
-                    anim.SetBool("GoUp", false);
-                    anim.SetBool("GoDown", true);
-                }
-            }
-            else
-            {
-                if (dirXRaw > 0)
-                {
-                    anim.SetBool("GoRight", true);
-                    anim.SetBool("GoLeft", false);
-                    anim.SetBool("GoUp", false);
-                    anim.SetBool("GoDown", false);
-                }
-                else
-                {
-                    anim.SetBool("GoRight", false);
-                    anim.SetBool("GoLeft", true);
-                    anim.SetBool("GoUp", false);
-                    anim.SetBool("GoDown", false);
-                }
-            }
-        }
-
+    private void HandleWandToggle() {
         if (Input.GetMouseButton(0))
         {
             wand.SetActive(!wand.activeSelf);
         }
-
-        rb.velocity = new Vector2(dirX, dirY) * speed;
     }
 }

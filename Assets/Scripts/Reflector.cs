@@ -9,6 +9,15 @@ public class Reflector : MonoBehaviour
     public int myType;
     private float JustHit;
 
+    [SerializeField] public float changeSize = 0.2f;
+    [SerializeField] public float changeMas = 0.2f;
+    public Vector3 ScaleFactor;
+
+    private void Start()
+    {
+        ScaleFactor = new Vector3(changeSize, changeSize, 0);
+    }
+
     private void Update()
     {
         JustHit -= Time.deltaTime;
@@ -33,8 +42,8 @@ public class Reflector : MonoBehaviour
 
     void Shrink(GameObject gmb)
     {
-        gmb.transform.DOScale(gmb.transform.localScale - new Vector3(0.2f, 0.2f, 0), 0.5f);
-        gmb.GetComponent<Rigidbody2D>().mass -= 0.2f;
+        gmb.transform.DOScale(gmb.transform.localScale - ScaleFactor, 0.5f);
+        gmb.GetComponent<Rigidbody2D>().mass -= changeMas;
 
         if (gmb.transform.localScale.x < 0.5f)
         {
@@ -44,7 +53,7 @@ public class Reflector : MonoBehaviour
 
     void Grow(GameObject gmb)
     {
-        gmb.transform.DOScale(gmb.transform.localScale + new Vector3(0.2f, 0.2f, 0), 0.5f);
-        gmb.GetComponent<Rigidbody2D>().mass += 0.2f;
+        gmb.transform.DOScale(gmb.transform.localScale + ScaleFactor, 0.5f);
+        gmb.GetComponent<Rigidbody2D>().mass += changeMas;
     }
 }

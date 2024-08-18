@@ -11,7 +11,7 @@ public class Wans : MonoBehaviour
     {
         if (other.tag == "Tornado")
         {
-            Debug.Log(123);
+            //Debug.Log(123);
             transform.parent.GetComponent<Rigidbody2D>().AddForce(-(Vector2)transform.right * strength / 2 * Time.deltaTime * 1 / Vector2.Distance(transform.position, other.transform.position));
             other.GetComponent<Rigidbody2D>().AddForce((Vector2)transform.right * strength * Time.deltaTime * 1 / Vector2.Distance(transform.position, other.transform.position));
         }
