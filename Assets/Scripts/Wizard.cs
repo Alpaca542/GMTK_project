@@ -83,7 +83,11 @@ public class wizard : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            wand.SetActive(!wand.activeSelf);
+            wand.SetActive(true);
+        }
+        else
+        {
+            wand.SetActive(false);
         }
     }
 }
