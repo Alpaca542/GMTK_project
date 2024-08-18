@@ -12,6 +12,9 @@ public class Tornado : MonoBehaviour
     public float speed;
     public Vector2 vel;
 
+    [Header("Growth Settings")]
+    [SerializeField] private Vector3 growthAmount = new Vector3(0.5f, 0.5f, 0f);
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,7 +34,7 @@ public class Tornado : MonoBehaviour
     void FixedUpdate()
     {
         transform.localScale -= new Vector3(0.1f, 0.1f, 0) * Time.fixedDeltaTime;
-        if (transform.localScale.x <= 0.1f)
+        if (transform.localScale.x <= 0.3f)
         {
             Destroy(gameObject);
             //lose
@@ -44,5 +47,10 @@ public class Tornado : MonoBehaviour
             rb.velocity = Vector2.Reflect(vel, collision.GetContact(0).normal).normalized * speed;
             vel = rb.velocity;
         }
+    }
+
+    public void Grow()
+    {
+        transform.localScale += growthAmount;
     }
 }

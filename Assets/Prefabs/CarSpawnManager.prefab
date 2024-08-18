@@ -46,9 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e101f62c5a6a0446926cbd758b12332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carPrefab: {fileID: 6841173560534414264, guid: 6851a54dff22952439db36fd3c2d87e2, type: 3}
-  startPoint: {fileID: 7475405928499842648}
-  endPoint: {fileID: 6444786255582976076}
+  carPrefab:
+  - {fileID: 294379388677614241, guid: 6851a54dff22952439db36fd3c2d87e2, type: 3}
+  points:
+  - {fileID: 7475405928499842648}
+  - {fileID: 6444786255582976076}
+  chanceOfBadCar: 0
   spawnInterval: 3
 --- !u!1 &4317693953598377873
 GameObject:

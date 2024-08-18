@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class House : MonoBehaviour
+public class House : GoodThing
 {
     [Header("Detection Settings")]
     [SerializeField] private float detectionRadius = 5f;
@@ -17,26 +17,19 @@ public class House : MonoBehaviour
     [SerializeField] private float respawnCooldown = 10f;
 
     private int Bad;
-    public int myValue;
     public Tornado tornado;
-    private ManagePoints mngPoints;
-    public Vector3 ScaleFactor;
-    [SerializeField] public float changeSize = 0.2f;
-    [SerializeField] public float changeMas = 0.2f;
 
     private float timeSinceLastSpawn;
 
     private void Start()
     {
         Bad = Random.Range(0, 2);
-
+        
         if (Bad == 1)
         {
             transform.localScale = new Vector2(transform.localScale.x * Random.Range(0.3f, 1.8f), transform.localScale.y * Random.Range(0.3f, 1.8f));
         }
 
-        mngPoints = GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>();
-        ScaleFactor = new Vector3(changeSize, changeSize, 0);
         tornado = FindObjectOfType<Tornado>();
 
         if (tornado == null)
@@ -72,31 +65,5 @@ public class House : MonoBehaviour
 
             person.AddComponent<Person>().Initialize(directionAwayFromTornado, runSpeed);
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.CompareTag("Tornado"))
-        {
-            if (Bad == 1)
-            {
-                Grow(collider.gameObject);
-                //spawm particles
-                GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().getPoints(myValue);
-                Destroy(gameObject);
-            }
-            else
-            {
-                Grow(collider.gameObject);
-                //spawm particles
-                GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().loosePoints(myValue);
-                Destroy(gameObject);
-            }
-        }
-    }
-    void Grow(GameObject gmb)
-    {
-        gmb.transform.DOScale(gmb.transform.localScale + ScaleFactor, 0.5f);
-        gmb.GetComponent<Rigidbody2D>().mass += 0.2f;
     }
 }

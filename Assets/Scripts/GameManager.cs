@@ -7,10 +7,13 @@ public class GameManager : MonoBehaviour
     //range from 0.5 to 1.5
     public float scale;
     public bool increasing;
-    // Start is called before the first frame update
+
+    public Tornado tornado;
+    
     void Start()
     {
         increasing = true;
+        tornado = FindObjectOfType<Tornado>();
     }
 
     void Update()

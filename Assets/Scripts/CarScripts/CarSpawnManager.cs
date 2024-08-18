@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarSpawnManager : MonoBehaviour
 {
     [Header("Car Settings")]
-    [SerializeField] private GameObject carPrefab; // The car prefab to spawn
+    [SerializeField] private GameObject[] carPrefab; // The car array prefab to spawn
     [SerializeField] private Transform[] points; // The points for the car
     [SerializeField] private float chanceOfBadCar;
 
@@ -20,7 +20,13 @@ public class CarSpawnManager : MonoBehaviour
 
     private void SpawnCar()
     {
-        GameObject newCar = Instantiate(carPrefab, transform.position, Quaternion.identity);
-        newCar.GetComponent<CarController>().points = points;
+        // random car is bad or good:
+        bool isBadCar = Random.value < chanceOfBadCar;
+        int randomIndex = Random.Range(0, carPrefab.Length);
+        GameObject selectedCarPrefab = carPrefab[randomIndex];
+        GameObject newCar = Instantiate(selectedCarPrefab, points[0].transform.position, Quaternion.identity);
+        CarController carController = newCar.GetComponent<CarController>();
+        carController.points = points;
+        carController.isBadCar = isBadCar;
     }
 }
