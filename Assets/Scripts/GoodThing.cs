@@ -9,7 +9,7 @@ public class GoodThing : MonoBehaviour
     {
         if (other.gameObject.tag == "Tornado")
         {
-            GameObject.FindGameObjectWithTag("MngPoints").GetComponent<ManagePoints>().loosePoints(myValue);
+            GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().loosePoints(myValue);
             Destroy(gameObject);
         }
     }

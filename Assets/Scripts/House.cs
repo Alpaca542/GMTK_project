@@ -83,14 +83,14 @@ public class House : MonoBehaviour
             {
                 Grow(collider.gameObject);
                 //spawm particles
-                GameObject.FindGameObjectWithTag("MngPoints").GetComponent<ManagePoints>().getPoints(myValue);
+                GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().getPoints(myValue);
                 Destroy(gameObject);
             }
             else
             {
                 Grow(collider.gameObject);
                 //spawm particles
-                GameObject.FindGameObjectWithTag("MngPoints").GetComponent<ManagePoints>().loosePoints(myValue);
+                GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().loosePoints(myValue);
                 Destroy(gameObject);
             }
         }

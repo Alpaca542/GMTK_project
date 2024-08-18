@@ -2242,11 +2242,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.5014331, y: -0.51385766}
-  - {x: 0.5001447, y: 0.50021863}
-  - {x: -0.50008965, y: 0.5001032}
-  - {x: -0.5002834, y: -0.5010719}
-  - {x: 0.5018312, y: -0.5020823}
+  - {x: 0.7917408, y: -0.34815106}
+  - {x: 0.77707684, y: 0.45714036}
+  - {x: -0.78625274, y: 0.46010187}
+  - {x: -0.8036591, y: -0.32635188}
+  - {x: -0.515242, y: -0.33652726}
+  - {x: 0.7959925, y: -0.3338066}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -18682,6 +18683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a183ed7bbfd0468bb072182fa403a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 0
   housesDestroyedGoal: 1
   carsDestroyedGoal: 1
   badHouses: 0
