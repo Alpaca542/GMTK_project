@@ -28,12 +28,12 @@ public class MenuManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene"); //TODO change to Level1 once we have!
+        SceneManager.LoadScene("Level" + PlayerPrefs.GetInt("UnlockedLevel", 1));
     }
 
     public void OpenLevel(int level)
     {
-        SceneManager.LoadScene("Level" + level); // once we have Levels scene we can change this
+        SceneManager.LoadScene("Level" + level);
     }
 
     private void ButtonsToArray()
