@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GoodThingFinder : MonoBehaviour
 {
-    private static List<GoodThing> goodThings;
+    [SerializeField] private static List<GoodThing> goodThings;
     public static event Action OnAllGoodThingsDestroyed;
 
     private void Start()
@@ -32,15 +32,17 @@ public class GoodThingFinder : MonoBehaviour
 
     public void RegisterGoodThing(GoodThing goodThing)
     {
-        if (goodThing.myValue > 0)
+        if (goodThing.myValue > 0 && !goodThings.Contains(goodThing))
         {
             goodThings.Add(goodThing);
+            
         }
     }
 
     public void UnregisterGoodThing(GoodThing goodThing)
     {
         goodThings.Remove(goodThing);
+        RegisterAllGoodThings(); // if somthin wasent added before do to timing
         Debug.Log("goodThing count: " + goodThings.Count);
         CheckForAllGoodThingsDestroyed();
     }
@@ -50,7 +52,6 @@ public class GoodThingFinder : MonoBehaviour
         if (goodThings.Count == 0)
         {
             OnAllGoodThingsDestroyed?.Invoke();
-            // gameManager.EndGameWin(); // Uncomment if you have a game manager handling the win condition
         }
     }
 

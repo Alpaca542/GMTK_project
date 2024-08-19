@@ -17,7 +17,10 @@ public class CarSpawnManager : MonoBehaviour
     [Header("Car Limit Settings")]
     [SerializeField] private int maxCars = 4;
     private int currentCarCount = 0;
+    [SerializeField]private List<GameObject> carList = new List<GameObject>();
     private List<GameObject> cars = new List<GameObject>();
+    private readonly object listLock = new object();
+    private readonly object carListLock = new object();
 
     private void Start()
     {
@@ -38,25 +41,82 @@ public class CarSpawnManager : MonoBehaviour
             CarController carController = newCar.GetComponent<CarController>();
             carController.points = points;
             carController.isBadCar = isBadCar;
+            if (isBadCar)
+            {
+                carController.myValue = +40;
+            }
+            else {
+                carController.myValue = -20;
+            }
 
             cars.Add(newCar);
+            carList.Add(newCar);
             currentCarCount++;
         }
     }
 
     private IEnumerator ActivateCars()
     {
-        foreach (GameObject car in cars)
+        while (true)
         {
             yield return new WaitForSeconds(spawnInterval);
-            MoveCarToStart(car);
+            HandleCarSpawning(); // Call the function to handle car spawning
+        }
+    }
+
+    private void HandleCarSpawning()
+    {
+        lock (carListLock)
+        {
+            if (carList.Count > 0)
+            {
+                GameObject car = carList[0];
+                carList.RemoveAt(0); 
+                MoveCarToStart(car);
+            }
         }
     }
 
     private void MoveCarToStart(GameObject car)
     {
-        car.transform.position = points[0].position; // Move car to the first point in the route
-        car.GetComponent<CarController>().StartCar(); // Start car movement
+        Collider2D obstacle = Physics2D.OverlapCircle(points[0].position, detectionRadius, obstacleLayer);
+
+        if (obstacle == null)
+        {
+            // If there's no obstacle, move the car to the start point and start its movement
+            car.transform.position = points[0].position; 
+            car.GetComponent<CarController>().StartCar(); 
+        }
+        else
+        {
+            StartCoroutine(ResetCarRoutine(car));
+        }
+    }
+
+    public void AddCarToList(CarController car)
+    {
+        if (cars.Contains(car.gameObject))
+        {
+            lock (listLock)
+            {
+                carList.Add(car.gameObject);
+                car.transform.position = new Vector3(transform.position.x - 1000, transform.position.y - 1000, -100f);
+            }
+
+        }
+    }
+
+    public void TriggerCarSpawn()
+    {
+        lock (carListLock)
+        {
+            if (carList.Count > 0)
+            {
+                GameObject car = carList[0];
+                carList.RemoveAt(0); 
+                MoveCarToStart(car);
+            }
+        }
     }
 
     public void ResetCar(GameObject car)
@@ -66,13 +126,24 @@ public class CarSpawnManager : MonoBehaviour
 
     private IEnumerator ResetCarRoutine(GameObject car)
     {
-        yield return new WaitForSeconds(spawnInterval);
-        MoveCarToStart(car);
+        yield return new WaitForSeconds(1);
+
+        AddCarToList(car.GetComponent<CarController>());
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+    }
+
+    private void OnEnable()
+    {
+        CarController.OnCarEnd += AddCarToList;
+    }
+
+    private void OnDisable()
+    {
+        CarController.OnCarEnd -= AddCarToList;
     }
 }

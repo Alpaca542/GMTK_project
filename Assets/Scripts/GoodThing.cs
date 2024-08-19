@@ -26,7 +26,7 @@ public class GoodThing : MonoBehaviour
         {
             FindObjectOfType<Tornado>().Grow();
             GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().AddToScore(myValue);
-            Instantiate(myParticles, transform.position, Quaternion.identity);
+            //Instantiate(myParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

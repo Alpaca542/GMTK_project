@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class CarController : GoodThing
 {
@@ -17,6 +18,7 @@ public class CarController : GoodThing
     private int currentPoint;
     private Rigidbody2D rb;
     private CarSpawnManager carSpawnManager;
+    public static event Action<CarController> OnCarEnd;
 
     private void Start()
     {
@@ -27,7 +29,7 @@ public class CarController : GoodThing
         if (isBadCar)
         {
             GetComponent<SpriteRenderer>().material.SetColor("_Outlinecolor", Color.red);
-            if (Random.Range(0, 2) == 0)
+            if (UnityEngine.Random.Range(0, 2) == 0)
             {
                 transform.localScale = new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 0.7f, 1);
             }
@@ -64,11 +66,11 @@ public class CarController : GoodThing
             if (Vector2.Distance(transform.position, points[currentPoint].position) < 0.1f)
             {
                 currentPoint++;
-                if (currentPoint >= points.Length && this.gameObject.activeSelf)
+                if (currentPoint >= points.Length)
                 {
                     currentPoint = 0;
                     isStopped = true;
-                    carSpawnManager.ResetCar(gameObject);
+                    OnCarEnd(this);
                 }
             }
         }

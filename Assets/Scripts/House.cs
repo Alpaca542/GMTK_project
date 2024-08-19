@@ -78,7 +78,6 @@ public class House : GoodThing
         GameObject houseObject = Instantiate(housePrefab, position, rotation);
         House houseComponent = houseObject.GetComponent<House>();
         houseComponent.myValue = value;
-        Debug.Log(value);
         return houseComponent;
     }
 }
