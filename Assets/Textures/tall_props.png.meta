@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e6e3614f64624cb183f70a4880c98e5
+guid: 40583197c6a2bb0499a0f35876f9c3ff
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -107,7 +107,20 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -136,70 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grass_and_road_tile_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f07a6459cb117425a9c74da0ed88befb
-      internalID: 1275189131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grass_and_road_tile_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42e1851b673fd45ee9807b8851bc456c
-      internalID: -830281663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grass_and_road_tile_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a62dce71a801641739143c9a60d22040
-      internalID: -1226955751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grass_and_road_tile_3
+      name: tall_props_0
       rect:
         serializedVersion: 2
         x: 0
@@ -213,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 548e5ce9c55a440f48b57c236af4da01
-      internalID: 1191893439
+      spriteID: 738c31c3362d6487d9b3153058ecc211
+      internalID: -587303020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grass_and_road_tile_4
+      name: tall_props_1
       rect:
         serializedVersion: 2
         x: 16
@@ -234,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e78559d518ef43b894d55be3b540e5d
-      internalID: 1612294814
+      spriteID: 0ac870156f1cf40ce8710ad92da91abd
+      internalID: -172977726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grass_and_road_tile_5
+      name: tall_props_2
       rect:
         serializedVersion: 2
         x: 32
@@ -255,14 +205,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da4b8edd8052045cea93eeb94afc35ac
-      internalID: 1883322915
+      spriteID: f28158765bc5f41ea861d3dacea92058
+      internalID: 711842088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grass_and_road_tile_6
+      name: tall_props_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65bc9caa8a05d44edb4b9554246a3b73
+      internalID: 1176389925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tall_props_4
       rect:
         serializedVersion: 2
         x: 0
@@ -276,14 +247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32a31c613834a4dc88ec342feb4df984
-      internalID: -653949710
+      spriteID: c0b9d3d61ad664bbbb44deafb8f2dc4a
+      internalID: 1838040369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grass_and_road_tile_7
+      name: tall_props_5
       rect:
         serializedVersion: 2
         x: 16
@@ -297,14 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c67c87591161c4380adf50cf5e98e0a3
-      internalID: -1902813200
+      spriteID: 7bcfd0d0e6b7847319265d458fb865a0
+      internalID: 1149151560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grass_and_road_tile_8
+      name: tall_props_6
       rect:
         serializedVersion: 2
         x: 32
@@ -318,8 +289,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33e43302fdb24478b83e2719e3191bde
-      internalID: -1057796359
+      spriteID: b490bef24ff94416facab6b985551830
+      internalID: 1958135368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tall_props_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83bd1961a8f824e34aeb1928d84885bb
+      internalID: 1215208379
       vertices: []
       indices: 
       edges: []
@@ -335,15 +327,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grass_and_road_tile_0: 1275189131
-      grass_and_road_tile_1: -830281663
-      grass_and_road_tile_2: -1226955751
-      grass_and_road_tile_3: 1191893439
-      grass_and_road_tile_4: 1612294814
-      grass_and_road_tile_5: 1883322915
-      grass_and_road_tile_6: -653949710
-      grass_and_road_tile_7: -1902813200
-      grass_and_road_tile_8: -1057796359
+      tall_props_0: -587303020
+      tall_props_1: -172977726
+      tall_props_2: 711842088
+      tall_props_3: 1176389925
+      tall_props_4: 1838040369
+      tall_props_5: 1149151560
+      tall_props_6: 1958135368
+      tall_props_7: 1215208379
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
