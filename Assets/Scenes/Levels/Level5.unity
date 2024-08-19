@@ -18205,6 +18205,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tornado
       objectReference: {fileID: 0}
+    - target: {fileID: 4860973988230327508, guid: 02fc228a69900954e96b921b0faa50f5, type: 3}
+      propertyPath: m_Size.x
+      value: 0.32627267
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860973988230327508, guid: 02fc228a69900954e96b921b0faa50f5, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3094523
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860973988230327508, guid: 02fc228a69900954e96b921b0faa50f5, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.008325428
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860973988230327508, guid: 02fc228a69900954e96b921b0faa50f5, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.009820282
+      objectReference: {fileID: 0}
     - target: {fileID: 4991026066322877471, guid: 02fc228a69900954e96b921b0faa50f5, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
