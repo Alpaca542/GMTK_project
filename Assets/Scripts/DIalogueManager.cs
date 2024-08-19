@@ -64,8 +64,8 @@ public class DialogueScript : MonoBehaviour
     }
     public IEnumerator Type(string WhatToType, Sprite WhatToShow, bool ShouldIStopAfter)
     {
-        // GetComponent<AudioSource>().loop = true;
-        // GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().loop = true;
+        GetComponent<AudioSource>().Play();
         if (StopTime)
         {
             Time.timeScale = 0f;
@@ -99,7 +99,7 @@ public class DialogueScript : MonoBehaviour
                 yield return new WaitForSecondsRealtime(typingspeed);
             }
         }
-        //GetComponent<AudioSource>().loop = false;
+        GetComponent<AudioSource>().loop = false;
 
         if (ShouldIStopAfter)
         {
@@ -173,10 +173,8 @@ public class DialogueScript : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) && cnv.activeSelf)
         {
-            //gameObject.GetComponent<soundManager>().sound.loop = false;
-            //GetComponent<AudioSource>().Stop();
             StopCoroutine(coroutine);
-            //GetComponent<AudioSource>().loop = false;
+            GetComponent<AudioSource>().loop = false;
             if (Display.text == Stringpb)
             {
                 if (ShouldIStopAfterpb)
