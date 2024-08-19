@@ -9,6 +9,7 @@ public class GoodThing : MonoBehaviour
     [SerializeField] public float changeSize = 0.2f;
     [SerializeField] public float changeMas = 0.2f;
     private ManagePoints mngPoints;
+    public GameObject myParticles;
     public int myValue; // good things have a Neg-score and bad things Have Pos-score
 
     private void Start()
@@ -25,6 +26,7 @@ public class GoodThing : MonoBehaviour
         {
             FindObjectOfType<Tornado>().Grow();
             GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().AddToScore(myValue);
+            Instantiate(myParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
