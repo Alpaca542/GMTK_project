@@ -13,6 +13,7 @@ public class DialogueScript : MonoBehaviour
     public bool startImmediately;
     public bool StopTime;
     public float typingspeed = 0.02f;
+    private float borderSize = 1;
 
     [Header("Content")]
     public string[] sentences;
@@ -23,7 +24,6 @@ public class DialogueScript : MonoBehaviour
     public TMP_Text Display;
     public Image Display2;
     private bool ShouldIStopAfterpb;
-    private float savedOrthoSize;
     private int IndexInMain;
     private string Stringpb;
     public GameObject btnContinue;
@@ -31,6 +31,10 @@ public class DialogueScript : MonoBehaviour
     public GameObject cnvInGame;
     public GameObject cnvInGame2;
     public GameObject btnContinueFake;
+
+    public GameObject animStart;
+    public GameObject animEnd;
+
     IEnumerator coroutine;
     private void Start()
     {
@@ -49,9 +53,8 @@ public class DialogueScript : MonoBehaviour
             IndexInMain = stopindexes[0];
         }
     }
-    public void StartCrtnRemotely(string WhatToType, Sprite WhatToShow, bool ShouldIStopAfter, float savedOrthoSize1)
+    public void StartCrtnRemotely(string WhatToType, Sprite WhatToShow, bool ShouldIStopAfter)
     {
-        savedOrthoSize = savedOrthoSize1;
         if (coroutine != null)
         {
             StopCoroutine(coroutine);
@@ -61,8 +64,8 @@ public class DialogueScript : MonoBehaviour
     }
     public IEnumerator Type(string WhatToType, Sprite WhatToShow, bool ShouldIStopAfter)
     {
-        GetComponent<AudioSource>().loop = true;
-        GetComponent<AudioSource>().Play();
+        // GetComponent<AudioSource>().loop = true;
+        // GetComponent<AudioSource>().Play();
         if (StopTime)
         {
             Time.timeScale = 0f;
@@ -76,14 +79,9 @@ public class DialogueScript : MonoBehaviour
         btnContinue.SetActive(false);
         btnContinueFake.SetActive(false);
         Display.text = "";
-        if (WhatToShow.name == "player")
-        {
-            Display2.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(420, 420);
-        }
-        else
-        {
-            Display2.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(221.65f, 0);
-        }
+        Debug.Log(WhatToShow.rect.size.x);
+        Display2.gameObject.GetComponent<RectTransform>().localScale = new Vector2(WhatToShow.rect.size.x, WhatToShow.rect.size.y) * (borderSize / Mathf.Max(WhatToShow.rect.size.x, WhatToShow.rect.size.y));
+
         Display2.sprite = WhatToShow;
         foreach (char letter1 in WhatToType.ToCharArray())
         {
@@ -101,7 +99,7 @@ public class DialogueScript : MonoBehaviour
                 yield return new WaitForSecondsRealtime(typingspeed);
             }
         }
-        GetComponent<AudioSource>().loop = false;
+        //GetComponent<AudioSource>().loop = false;
 
         if (ShouldIStopAfter)
         {
@@ -114,7 +112,6 @@ public class DialogueScript : MonoBehaviour
     }
     public void StartMainLine(float orthosize)
     {
-        savedOrthoSize = orthosize;
         coroutine = Type(sentences[IndexInMain], faces[IndexInMain], false);
         StartCoroutine(coroutine);
     }
@@ -138,14 +135,19 @@ public class DialogueScript : MonoBehaviour
                 cnvInGame2.SetActive(true);
                 btnContinue.SetActive(false);
                 cnv.SetActive(false);
-                savedOrthoSize = 0;
 
                 if (IndexInMain == stopindexes[0])
                 {
-                    //
+                    animStart.SetActive(true);
+                    Invoke(nameof(StartTheGame), 1f);
                 }
             }
         }
+    }
+
+    void StartTheGame()
+    {
+        SceneManager.LoadScene("Level1");
     }
 
     public void StopTyping()
@@ -159,7 +161,6 @@ public class DialogueScript : MonoBehaviour
         btnContinue.SetActive(false);
         cnv.SetActive(false);
         Camera.main.transform.parent.GetComponent<playerfollow>().enabled = true;
-        Camera.main.DOOrthoSize(savedOrthoSize, 0.5f).SetUpdate(true);
     }
     private void Update()
     {
@@ -168,7 +169,7 @@ public class DialogueScript : MonoBehaviour
             //gameObject.GetComponent<soundManager>().sound.loop = false;
             //GetComponent<AudioSource>().Stop();
             StopCoroutine(coroutine);
-            GetComponent<AudioSource>().loop = false;
+            //GetComponent<AudioSource>().loop = false;
             if (Display.text == Stringpb)
             {
                 if (ShouldIStopAfterpb)
