@@ -38,8 +38,6 @@ public class wizard : MonoBehaviour
 
         float dirXRaw = Input.GetAxisRaw("Horizontal");
         float dirYRaw = Input.GetAxisRaw("Vertical");
-        Debug.Log(dirXRaw);
-        Debug.Log(dirYRaw);
         if (Mathf.Abs(dirXRaw) > 0 || Mathf.Abs(dirYRaw) > 0)
         {
             if (Mathf.Abs(dirYRaw) > 0)
