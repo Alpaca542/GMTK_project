@@ -6,6 +6,9 @@ public class GenerateMap : MonoBehaviour
 {
     public GameObject[] houses;
     public GameObject[] BigHouses;
+
+    public float chanceOfBadHouse;
+
     void Start()
     {
         GameObject[] places = GameObject.FindGameObjectsWithTag("HousePoints");
@@ -13,7 +16,7 @@ public class GenerateMap : MonoBehaviour
 
         foreach (GameObject gmb in places)
         {
-            Instantiate(houses[Random.Range(0, houses.Length)], gmb.transform.position, gmb.transform.rotation);
+            Instantiate(houses[Random.Range(0, houses.Length)], gmb.transform.position, gmb.transform.rotation).GetComponent<House>().Bad = Random.value < chanceOfBadHouse;
         }
         foreach (GameObject gmb in places2)
         {

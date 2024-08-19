@@ -16,16 +16,14 @@ public class House : GoodThing
     [SerializeField] private float runSpeed = 3f;
     [SerializeField] private float respawnCooldown = 10f;
 
-    private int Bad;
+    public bool Bad;
     public Tornado tornado;
 
     private float timeSinceLastSpawn;
 
     private void Start()
     {
-        Bad = Random.Range(0, 2);
-
-        if (Bad == 1)
+        if (Bad)
         {
             GetComponent<SpriteRenderer>().material.SetColor("_Outlinecolor", Color.red);
             if (Random.Range(0, 2) == 0)

@@ -14,8 +14,7 @@ public class CarSpawnManager : MonoBehaviour
 
     private void Start()
     {
-        // Start spawning cars at regular intervals
-        InvokeRepeating("SpawnCar", 0f, spawnInterval);
+        SpawnCar();
     }
 
     private void SpawnCar()
@@ -28,5 +27,6 @@ public class CarSpawnManager : MonoBehaviour
         CarController carController = newCar.GetComponent<CarController>();
         carController.points = points;
         carController.isBadCar = isBadCar;
+        Invoke(nameof(SpawnCar), spawnInterval + Random.Range(-0.3f, 0.3f));        // Spawn cars at random intervals
     }
 }
