@@ -1023,9 +1023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd0e5457dc3d5492d84b923370698051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destrBar: {fileID: 1766826879}
-  AmountOfGood: 0
-  AmountOfBad: 4
+  sceneName: 
+  pauseMenuPanel: {fileID: 0}
 --- !u!4 &557568185
 Transform:
   m_ObjectHideFlags: 0
@@ -2818,10 +2817,11 @@ MonoBehaviour:
   - {fileID: 4326810600855600771, guid: bd0a1bf5156714441a1d991de03eaa07, type: 3}
   - {fileID: 4833818324303816058, guid: 9fbfe821f9eed4eaca3655705c40e1be, type: 3}
   - {fileID: 5194966553398188619, guid: 1ada4d1db8c514a1bb3543c1dd67f27a, type: 3}
-  - {fileID: 5193990629424547492, guid: e52a095f585ec41b28f2c19edbb5ab82, type: 3}
   - {fileID: 191824255814741286, guid: 8b77a9a09c1e54b49b04a22407b6eec3, type: 3}
   BigHouses:
   - {fileID: 779940831918222517, guid: f7706ffcd5e5b4d128c0bc5e847441a7, type: 3}
+  - {fileID: 5193990629424547492, guid: e52a095f585ec41b28f2c19edbb5ab82, type: 3}
+  chanceOfBadHouse: 0.6
 --- !u!4 &678271119
 Transform:
   m_ObjectHideFlags: 0
