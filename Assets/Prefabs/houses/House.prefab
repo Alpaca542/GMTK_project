@@ -101,6 +101,7 @@ MonoBehaviour:
   ScaleFactor: {x: 0, y: 0, z: 0}
   changeSize: 0.2
   changeMas: 0.2
+  myParticles: {fileID: 985916674335616835, guid: 53ed6774128794b539513aa364026af7, type: 3}
   myValue: 5
   detectionRadius: 5
   personPrefab: {fileID: 4451197444773612049, guid: 912f82c8403abc64080efbc47fc9048f, type: 3}
