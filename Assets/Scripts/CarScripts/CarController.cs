@@ -10,7 +10,21 @@ public class CarController : GoodThing
     public Transform[] points;
     public bool isBadCar;
     private int currentPoint;
-
+    private void Start()
+    {
+        if (isBadCar)
+        {
+            GetComponent<SpriteRenderer>().material.SetColor("_Outlinecolor", Color.red);
+            if (Random.Range(0, 2) == 0)
+            {
+                transform.localScale = new Vector3(1.1f, 0.7f, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(0.8f, 1.3f, 1);
+            }
+        }
+    }
     private void Update()
     {
         Vector2 direction = points[currentPoint].position - transform.position;

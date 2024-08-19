@@ -24,10 +24,18 @@ public class House : GoodThing
     private void Start()
     {
         Bad = Random.Range(0, 2);
-        
+
         if (Bad == 1)
         {
-            //transform.localScale = new Vector2(transform.localScale.x * Random.Range(0.3f, 1.8f), transform.localScale.y * Random.Range(0.3f, 1.8f));
+            GetComponent<SpriteRenderer>().material.SetColor("_Outlinecolor", Color.red);
+            if (Random.Range(0, 2) == 0)
+            {
+                transform.localScale = new Vector3(1.1f, 0.7f, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(0.8f, 1.3f, 1);
+            }
         }
 
         tornado = FindObjectOfType<Tornado>();

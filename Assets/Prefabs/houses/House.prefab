@@ -55,6 +55,7 @@ SpriteRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e4eb5cc48a0c94791aaa7ee6a3fe878d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,7 +102,11 @@ MonoBehaviour:
   ScaleFactor: {x: 0, y: 0, z: 0}
   changeSize: 0.2
   changeMas: 0.2
+<<<<<<< HEAD
   myValue: 5
+=======
+  myValue: 0
+>>>>>>> 2aaa9eecbb7b36fb29b01fd62f1df0a1caffc1e8
   detectionRadius: 5
   personPrefab: {fileID: 4451197444773612049, guid: 912f82c8403abc64080efbc47fc9048f, type: 3}
   minPeople: 2

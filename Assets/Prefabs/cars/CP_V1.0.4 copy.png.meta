@@ -1021,10 +1021,10 @@ TextureImporter:
       name: CP_V1.0.4 copy_42
       rect:
         serializedVersion: 2
-        x: 271
-        y: 574
-        width: 34
-        height: 50
+        x: 269
+        y: 572
+        width: 38
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
