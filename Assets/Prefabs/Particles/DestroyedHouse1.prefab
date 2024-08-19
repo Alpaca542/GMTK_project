@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3383977380973338417}
   - component: {fileID: 4640621395006386538}
   - component: {fileID: 5075507222634249158}
+  - component: {fileID: -5401814217349293255}
   m_Layer: 0
   m_Name: DestroyedHouse1
   m_TagString: Untagged
@@ -4888,3 +4889,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-5401814217349293255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985916674335616835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ba838a6deed42889ae97c796a1c686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 1
