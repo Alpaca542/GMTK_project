@@ -17,10 +17,15 @@ public class ManageGame : MonoBehaviour
     public TextMeshProUGUI endGameText;
     public Button nextLevelButton;
     public Button restartLevelButton;
-
+    public DialogueScript dlgMng;
     private void Start()
     {
         Time.timeScale = 1f;
+        if (PlayerPrefs.HasKey("usedTutorial"))
+        {
+            PlayerPrefs.SetInt("usedTutorial", 1);
+            dlgMng.StartMainLine();
+        }
         sceneName = SceneManager.GetActiveScene().name;
         mng = GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>();
         mng.LoadScores();
@@ -42,7 +47,7 @@ public class ManageGame : MonoBehaviour
     }
     public void RestartLevel()
     {
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
     }
 
@@ -84,12 +89,14 @@ public class ManageGame : MonoBehaviour
         endGameText.text = loseGameText;
     }
 
-    private void UnlockNewLevel() {
+    private void UnlockNewLevel()
+    {
         if (!sceneName.Contains("Level"))
         {
             Debug.Log("this is a testing only level!");
         }
-        else { 
+        else
+        {
             string levelNumber = sceneName.Replace("Level", "");
             int unlockedLevel = int.Parse(levelNumber);
             PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel);

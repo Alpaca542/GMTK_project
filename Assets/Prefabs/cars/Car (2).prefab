@@ -83,12 +83,13 @@ MonoBehaviour:
   ScaleFactor: {x: 0, y: 0, z: 0}
   changeSize: 0.2
   changeMas: 0.2
+  myParticles: {fileID: 0}
   myValue: 0
   speed: 4
   detectionRange: 3.5
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 576
+    m_Bits: 584
   points: []
   isBadCar: 0
 --- !u!212 &8362651166242213905

@@ -110,7 +110,7 @@ public class DialogueScript : MonoBehaviour
             btnContinue.SetActive(true);
         }
     }
-    public void StartMainLine(float orthosize)
+    public void StartMainLine()
     {
         coroutine = Type(sentences[IndexInMain], faces[IndexInMain], false);
         StartCoroutine(coroutine);
@@ -138,8 +138,15 @@ public class DialogueScript : MonoBehaviour
 
                 if (IndexInMain == stopindexes[0])
                 {
-                    animStart.SetActive(true);
-                    Invoke(nameof(StartTheGame), 1f);
+                    if (StopTime)
+                    {
+
+                    }
+                    else
+                    {
+                        animStart.SetActive(true);
+                        Invoke(nameof(StartTheGame), 1f);
+                    }
                 }
             }
         }

@@ -7,11 +7,16 @@ public class GameManager : MonoBehaviour
     //range from 0.5 to 1.5
     public float scale;
     public bool increasing;
-
+    public DialogueScript dlgMng;
     public Tornado tornado;
-    
+
     void Start()
     {
+        if (PlayerPrefs.HasKey("usedTutorial"))
+        {
+            PlayerPrefs.SetInt("usedTutorial", 1);
+            dlgMng.StartMainLine();
+        }
         increasing = true;
         tornado = FindObjectOfType<Tornado>();
     }
