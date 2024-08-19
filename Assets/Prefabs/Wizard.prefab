@@ -14893,7 +14893,7 @@ GameObject:
   - component: {fileID: 982359325137850685}
   - component: {fileID: 1186160720139565999}
   - component: {fileID: 8042181787739889357}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wizard
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -14983,6 +14983,7 @@ MonoBehaviour:
   speed: 3
   rb: {fileID: 1186160720139565999}
   wand: {fileID: 2718997196361022288}
+  anim: {fileID: 0}
   currentReflector: {fileID: 0}
 --- !u!61 &982359325137850685
 BoxCollider2D:

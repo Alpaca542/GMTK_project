@@ -109,6 +109,7 @@ MonoBehaviour:
   spawnRadius: 2
   runSpeed: 2
   respawnCooldown: 10
+  Bad: 0
   tornado: {fileID: 6905088089069994489, guid: 02fc228a69900954e96b921b0faa50f5, type: 3}
 --- !u!61 &1813874136598386911
 BoxCollider2D:
@@ -139,7 +140,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.009643555}
