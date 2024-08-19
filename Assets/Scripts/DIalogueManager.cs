@@ -166,7 +166,7 @@ public class DialogueScript : MonoBehaviour
         cnvInGame.SetActive(true);
         cnvInGame2.SetActive(true);
         btnContinue.SetActive(false);
-        cnv.SetActive(false);
+        cnv.transform.DOMoveY(cnv.transform.position.y - 5, 1f);
         Camera.main.transform.parent.GetComponent<playerfollow>().enabled = true;
     }
     private void Update()
