@@ -1047,7 +1047,7 @@ GameObject:
   - component: {fileID: 139219468}
   - component: {fileID: 139219467}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CurrentScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -135.60509, w: 0}
+  m_margin: {x: 0, y: 0, z: -419.03534, w: -37.86721}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1802,7 +1802,7 @@ GameObject:
   - component: {fileID: 611349635}
   - component: {fileID: 611349634}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: PBScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1910,7 +1910,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -135.60509, w: 0}
+  m_margin: {x: 0, y: 0, z: -431.75668, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2140,7 +2140,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 4
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -2525,7 +2525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -76.19995, y: -243.52002}
+  m_AnchoredPosition: {x: -76.200195, y: -243.52002}
   m_SizeDelta: {x: 206, y: 67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1334776003
@@ -18763,6 +18763,7 @@ MonoBehaviour:
   - {fileID: 5194966553398188619, guid: 1ada4d1db8c514a1bb3543c1dd67f27a, type: 3}
   - {fileID: 5193990629424547492, guid: e52a095f585ec41b28f2c19edbb5ab82, type: 3}
   - {fileID: 191824255814741286, guid: 8b77a9a09c1e54b49b04a22407b6eec3, type: 3}
+  BigHouses: []
 --- !u!1 &1951102209
 GameObject:
   m_ObjectHideFlags: 0
@@ -18807,42 +18808,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a183ed7bbfd0468bb072182fa403a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 0
-  housesDestroyedGoal: 1
-  carsDestroyedGoal: 1
-  badHouses: 0
-  badCars: 0
-  goodBarColors:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  gmMng: {fileID: 497493198}
+  levels:
+  - Level1
+  - Level2
+  - Level3
+  currentScoreText: {fileID: 139219467}
+  bestScoreText: {fileID: 611349634}
 --- !u!1 &1983007474
 GameObject:
   m_ObjectHideFlags: 0
