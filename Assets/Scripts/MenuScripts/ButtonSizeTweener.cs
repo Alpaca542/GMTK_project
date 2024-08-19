@@ -8,11 +8,11 @@ public class ButtonSizeTweener : MonoBehaviour, IPointerEnterHandler, IPointerEx
 {
     public void OnPointerEnter(PointerEventData eventData)
     {
-        transform.DOScale(1.2f, 0.2f);
+        transform.DOScale(1.2f, 0.2f).SetUpdate(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        transform.DOScale(1f, 0.2f);
+        transform.DOScale(1f, 0.2f).SetUpdate(true);
     }
 }
