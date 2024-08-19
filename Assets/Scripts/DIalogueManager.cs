@@ -9,28 +9,29 @@ using TMPro;
 
 public class DialogueScript : MonoBehaviour
 {
+    [Header("Parametres")]
+    public bool startImmediately;
     public bool StopTime;
-    private float savedOrthoSize;
-    public TMP_Text Display;
-    public Image Display2;
+    public float typingspeed = 0.02f;
+
+    [Header("Content")]
     public string[] sentences;
-    public bool ShouldIStopAfterpb;
-    public Animation startAnim;
-    public AnimationClip startAnim2;
-    public AnimationClip startAnim3;
-    public AnimationClip startAnim4;
     public Sprite[] faces;
     public int[] stopindexes = { 7 };
-    public int IndexInMain;
-    public string Stringpb;
+
+    [Header("Fields")]
+    public TMP_Text Display;
+    public Image Display2;
+    private bool ShouldIStopAfterpb;
+    private float savedOrthoSize;
+    private int IndexInMain;
+    private string Stringpb;
     public GameObject btnContinue;
     public GameObject cnv;
     public GameObject cnvInGame;
     public GameObject cnvInGame2;
     public GameObject btnContinueFake;
-    public float typingspeed = 0.02f;
     IEnumerator coroutine;
-    public bool startImmediately;
     private void Start()
     {
         Time.timeScale = 1f;
