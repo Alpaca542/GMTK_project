@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CarController : GoodThing
 {
@@ -9,6 +10,7 @@ public class CarController : GoodThing
 
     private float currentVelocity;
     private Collider2D carCollider;
+    private bool isStopped; 
 
     public Transform[] points;
     public bool isBadCar;
@@ -36,29 +38,40 @@ public class CarController : GoodThing
 
     private void Update()
     {
-        bool obstacleDetected = DetectObstacle();
+        if (!isStopped)
+        {
+            bool obstacleDetected = DetectObstacle();
 
-        if (!obstacleDetected)
-        {
-            Vector2 direction = points[currentPoint].position - transform.position;
-            direction.Normalize();
-            rb.velocity = direction * speed;
-            LookAt(points[currentPoint].position);
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
-        }
-
-        // Check if the car has reached the end point
-        if (Vector2.Distance(transform.position, points[currentPoint].position) < 0.1f)
-        {
-            currentPoint++;
-            if (currentPoint >= points.Length)
+            if (!obstacleDetected)
             {
-                Destroy(gameObject);
+                Vector2 direction = points[currentPoint].position - transform.position;
+                direction.Normalize();
+                rb.velocity = direction * speed;
+                LookAt(points[currentPoint].position);
+            }
+            else
+            {
+                rb.velocity = Vector2.zero;
+                StartCoroutine(StopForSeconds(5)); 
+            }
+
+            // Check if the car has reached the end point
+            if (Vector2.Distance(transform.position, points[currentPoint].position) < 0.1f)
+            {
+                currentPoint++;
+                if (currentPoint >= points.Length)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
+    }
+
+    private IEnumerator StopForSeconds(float seconds)
+    {
+        isStopped = true;  
+        yield return new WaitForSeconds(seconds);  
+        isStopped = false;  
     }
 
     private bool DetectObstacle()
