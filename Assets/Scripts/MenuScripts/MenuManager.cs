@@ -9,6 +9,8 @@ public class MenuManager : MonoBehaviour
     public Button[] buttonList;
     public GameObject levelButtonLay;
 
+    public GameObject startAnim;
+
     private void Awake()
     {
         ButtonsToArray();
@@ -28,11 +30,23 @@ public class MenuManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level" + PlayerPrefs.GetInt("UnlockedLevel", 1));
+        Invoke(nameof(LoadGameScene), 1f);
+    }
+
+    public void LoadGameScene()
+    {
+        StartCoroutine(LoadLevelScene(PlayerPrefs.GetInt("UnlockedLevel", 1)));
     }
 
     public void OpenLevel(int level)
     {
+        StartCoroutine(LoadLevelScene(level));
+    }
+
+    public IEnumerator LoadLevelScene(int level)
+    {
+        startAnim.SetActive(true);
+        yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene("Level" + level);
     }
 
