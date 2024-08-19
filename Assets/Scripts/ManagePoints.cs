@@ -5,19 +5,22 @@ using TMPro;
 
 public class ManagePoints : MonoBehaviour
 {
-    [Header("Level Names:")]
-    [SerializeField]public string[] levels = {"Level1", "Level2", "Level3"};
+    public string[] levels = { "SampleScene", "Level1", "Level2", "Level3" };
     private Dictionary<string, int> bestScores = new Dictionary<string, int>();
 
     public TextMeshProUGUI currentScoreText;
     public TextMeshProUGUI bestScoreText;
     private int score;
 
+    private void Start()
+    {
+        ResetScore();
+    }
+
     public void AddToScore(int points)
     {
         score += points;
         UpdateCurrentScoreText();
-        Debug.Log("Score Updated: " + score);
     }
     public int GetScore()
     {
@@ -41,6 +44,10 @@ public class ManagePoints : MonoBehaviour
         {
             bestScores[levelName] = score;
         }
+        UpdateBestScoreText(levelName);
+
+        // Save the best score for the current level
+        SaveCurrentLevelScore(levelName);
     }
 
     //call to display the best score for a level.
@@ -69,7 +76,7 @@ public class ManagePoints : MonoBehaviour
         foreach (var level in levels)
         {
             if (PlayerPrefs.HasKey(level))
-            {
+            {       
                 bestScores[level] = PlayerPrefs.GetInt(level);
             }
         }
@@ -87,7 +94,20 @@ public class ManagePoints : MonoBehaviour
     {
         if (bestScoreText != null)
         {
-            bestScoreText.text = "High Score" + levelName + ": " + GetBestScore(levelName).ToString();
+            bestScoreText.text = "PB:" + GetBestScore(levelName).ToString();
         }
     }
+    public void SaveCurrentLevelScore(string levelName)
+    {
+        if (bestScores.ContainsKey(levelName))
+        {
+            PlayerPrefs.SetInt(levelName, bestScores[levelName]);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            Debug.LogWarning("No best score found for level: " + levelName);
+        }
+    }
+
 }

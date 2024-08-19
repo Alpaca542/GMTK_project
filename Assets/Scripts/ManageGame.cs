@@ -33,7 +33,6 @@ public class ManageGame : MonoBehaviour
     }
     public void RestartLevel()
     {
-       
         Time.timeScale = 1f; 
         SceneManager.LoadScene(sceneName);
     }
@@ -44,6 +43,21 @@ public class ManageGame : MonoBehaviour
         SceneManager.LoadScene("MenuScene");
     }
 
+    public void EndGameWin()
+    {
+        Time.timeScale = 1f;
+        mng.UpdateBestScore(sceneName, mng.GetScore());
+        mng.SaveCurrentLevelScore(sceneName);
+        SceneManager.LoadScene("MenuScene");
+        
+    }
+
+    public void EndGameLose()
+    {
+        Time.timeScale = 1f;
+        //TODO add some Logic
+        SceneManager.LoadScene("MenuScene");
+    }
 
 
     /* public Slider destrBar;

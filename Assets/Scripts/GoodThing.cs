@@ -15,6 +15,9 @@ public class GoodThing : MonoBehaviour
     {
         mngPoints = GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>();
         ScaleFactor = new Vector2(changeSize, changeSize);
+        GoodThingFinder goodThingFinder = FindObjectOfType<GoodThingFinder>();
+        goodThingFinder.RegisterGoodThing(this);
+        Debug.Log("One added");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,6 +27,14 @@ public class GoodThing : MonoBehaviour
             FindObjectOfType<Tornado>().Grow();
             GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().AddToScore(myValue);
             Destroy(gameObject);
+        }
+    }
+    private void OnDestroy()
+    {
+        GoodThingFinder goodThingFinder = FindObjectOfType<GoodThingFinder>();
+        if (goodThingFinder != null)
+        {
+            goodThingFinder.UnregisterGoodThing(this);
         }
     }
 
