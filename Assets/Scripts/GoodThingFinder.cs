@@ -1,14 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GoodThingFinder : MonoBehaviour
 {
-    private static List<GoodThing> goodThings = new List<GoodThing>();
-    public ManageGame gameManager;
+    private static List<GoodThing> goodThings;
+    public static event Action OnAllGoodThingsDestroyed;
+    //public ManageGame gameManager;
 
     private void Start()
     {
+        goodThings = new List<GoodThing>();
         RegisterAllGoodThings();
     }
 
@@ -31,6 +34,7 @@ public class GoodThingFinder : MonoBehaviour
     public void UnregisterGoodThing(GoodThing goodThing)
     {
         goodThings.Remove(goodThing);
+        Debug.Log("goodThing"+goodThings.Count);
         CheckForAllGoodThingsDestroyed();
     }
 
@@ -38,7 +42,8 @@ public class GoodThingFinder : MonoBehaviour
     {
         if (goodThings.Count == 0)
         {
-            gameManager.EndGameWin();
+            OnAllGoodThingsDestroyed?.Invoke();
+           // gameManager.EndGameWin();
         }
     }
 

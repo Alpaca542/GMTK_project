@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,13 +13,15 @@ public class Tornado : MonoBehaviour
     public float speed;
     public Vector2 vel;
 
+    public static event Action OnTornadoDie;
+
     [Header("Growth Settings")]
     [SerializeField] private Vector3 growthAmount = new Vector3(0.5f, 0.5f, 0f);
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = Random.insideUnitCircle.normalized * speed;
+        rb.velocity = UnityEngine.Random.insideUnitCircle.normalized * speed;
         vel = rb.velocity;
     }
 
@@ -36,8 +39,8 @@ public class Tornado : MonoBehaviour
         transform.localScale -= new Vector3(0.1f, 0.1f, 0) * Time.fixedDeltaTime;
         if (transform.localScale.x <= 0.3f)
         {
-            Destroy(gameObject);
-            //lose
+            gameObject.SetActive(false);
+            OnTornadoDie?.Invoke();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

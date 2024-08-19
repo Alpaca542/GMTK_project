@@ -17,7 +17,6 @@ public class GoodThing : MonoBehaviour
         ScaleFactor = new Vector2(changeSize, changeSize);
         GoodThingFinder goodThingFinder = FindObjectOfType<GoodThingFinder>();
         goodThingFinder.RegisterGoodThing(this);
-        Debug.Log("One added");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
