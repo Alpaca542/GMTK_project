@@ -17800,7 +17800,7 @@ MonoBehaviour:
   - {fileID: 1159601707}
   - {fileID: 507068086}
   chanceOfBadCar: 0.1
-  spawnInterval: 1
+  spawnInterval: 2
 --- !u!4 &1660479429
 Transform:
   m_ObjectHideFlags: 0
