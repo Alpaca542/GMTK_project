@@ -72,4 +72,13 @@ public class House : GoodThing
             person.AddComponent<Person>().Initialize(directionAwayFromTornado, runSpeed);
         }
     }
+
+    public static House InstantiateHouse(GameObject housePrefab, Vector3 position, Quaternion rotation, int value)
+    {
+        GameObject houseObject = Instantiate(housePrefab, position, rotation);
+        House houseComponent = houseObject.GetComponent<House>();
+        houseComponent.myValue = value;
+        Debug.Log(value);
+        return houseComponent;
+    }
 }

@@ -7,11 +7,17 @@ public class GoodThingFinder : MonoBehaviour
 {
     private static List<GoodThing> goodThings;
     public static event Action OnAllGoodThingsDestroyed;
-    //public ManageGame gameManager;
 
     private void Start()
     {
         goodThings = new List<GoodThing>();
+        // Comment out automatic registration, we'll call this manually after map generation
+        // RegisterAllGoodThings();
+    }
+
+    // Method to manually trigger registration after map generation
+    public void RegisterAllGoodThingsDelayed()
+    {
         RegisterAllGoodThings();
     }
 
@@ -26,7 +32,8 @@ public class GoodThingFinder : MonoBehaviour
 
     public void RegisterGoodThing(GoodThing goodThing)
     {
-        if (goodThing.myValue > 0) { 
+        if (goodThing.myValue > 0)
+        {
             goodThings.Add(goodThing);
         }
     }
@@ -34,7 +41,7 @@ public class GoodThingFinder : MonoBehaviour
     public void UnregisterGoodThing(GoodThing goodThing)
     {
         goodThings.Remove(goodThing);
-        Debug.Log("goodThing"+goodThings.Count);
+        Debug.Log("goodThing count: " + goodThings.Count);
         CheckForAllGoodThingsDestroyed();
     }
 
@@ -43,12 +50,12 @@ public class GoodThingFinder : MonoBehaviour
         if (goodThings.Count == 0)
         {
             OnAllGoodThingsDestroyed?.Invoke();
-           // gameManager.EndGameWin();
+            // gameManager.EndGameWin(); // Uncomment if you have a game manager handling the win condition
         }
     }
 
     public List<GoodThing> GetGoodThings()
     {
-        return new List<GoodThing>(goodThings); 
+        return new List<GoodThing>(goodThings);
     }
 }

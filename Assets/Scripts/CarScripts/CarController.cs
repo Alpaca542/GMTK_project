@@ -10,17 +10,19 @@ public class CarController : GoodThing
 
     private float currentVelocity;
     private Collider2D carCollider;
-    private bool isStopped; 
+    private bool isStopped;
 
     public Transform[] points;
     public bool isBadCar;
     private int currentPoint;
     private Rigidbody2D rb;
+    private CarSpawnManager carSpawnManager;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         carCollider = GetComponent<Collider2D>();
+        carSpawnManager = GetComponentInParent<CarSpawnManager>();
 
         if (isBadCar)
         {
@@ -36,6 +38,12 @@ public class CarController : GoodThing
         }
     }
 
+    public void StartCar()
+    {
+        currentPoint = 0;
+        isStopped = false;
+    }
+
     private void Update()
     {
         if (!isStopped)
@@ -44,34 +52,41 @@ public class CarController : GoodThing
 
             if (!obstacleDetected)
             {
-                Vector2 direction = points[currentPoint].position - transform.position;
-                direction.Normalize();
-                rb.velocity = direction * speed;
-                LookAt(points[currentPoint].position);
+                MoveTowardsNextPoint();
             }
             else
             {
                 rb.velocity = Vector2.zero;
-                StartCoroutine(StopForSeconds(5)); 
+                StartCoroutine(StopForSeconds(5));
             }
 
             // Check if the car has reached the end point
             if (Vector2.Distance(transform.position, points[currentPoint].position) < 0.1f)
             {
                 currentPoint++;
-                if (currentPoint >= points.Length)
+                if (currentPoint >= points.Length && this.gameObject.activeSelf)
                 {
-                    Destroy(gameObject);
+                    currentPoint = 0;
+                    isStopped = true;
+                    carSpawnManager.ResetCar(gameObject);
                 }
             }
         }
     }
 
+    private void MoveTowardsNextPoint()
+    {
+        Vector2 direction = points[currentPoint].position - transform.position;
+        direction.Normalize();
+        rb.velocity = direction * speed;
+        LookAt(points[currentPoint].position);
+    }
+
     private IEnumerator StopForSeconds(float seconds)
     {
-        isStopped = true;  
-        yield return new WaitForSeconds(seconds);  
-        isStopped = false;  
+        isStopped = true;
+        yield return new WaitForSeconds(seconds);
+        isStopped = false;
     }
 
     private bool DetectObstacle()

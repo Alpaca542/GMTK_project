@@ -11,16 +11,40 @@ public class GenerateMap : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(GenerateMapAndRegisterGoodThings());
+    }
+
+    private IEnumerator GenerateMapAndRegisterGoodThings()
+    {
         GameObject[] places = GameObject.FindGameObjectsWithTag("HousePoints");
         GameObject[] places2 = GameObject.FindGameObjectsWithTag("BigHousePoints");
 
         foreach (GameObject gmb in places)
         {
-            Instantiate(houses[Random.Range(0, houses.Length)], gmb.transform.position, gmb.transform.rotation).GetComponent<House>().Bad = Random.value < chanceOfBadHouse;
+            bool isBadHouse = Random.value < chanceOfBadHouse;
+
+            int myValue = isBadHouse ? 100 : -50;
+
+            House newHouse = House.InstantiateHouse(houses[Random.Range(0, houses.Length)], gmb.transform.position, gmb.transform.rotation, myValue);
+            newHouse.Bad = isBadHouse;
         }
+
         foreach (GameObject gmb in places2)
         {
             Instantiate(BigHouses[Random.Range(0, BigHouses.Length)], gmb.transform.position, gmb.transform.rotation);
+        }
+
+        yield return new WaitForEndOfFrame();
+
+        
+        GoodThingFinder goodThingFinder = FindObjectOfType<GoodThingFinder>();
+        if (goodThingFinder != null)
+        {
+            goodThingFinder.RegisterAllGoodThingsDelayed();
+        }
+        else
+        {
+            Debug.LogError("GoodThingFinder not found in the scene.");
         }
     }
 }
