@@ -30,7 +30,7 @@ public class CarController : GoodThing
         Vector2 direction = points[currentPoint].position - transform.position;
         direction.Normalize();
         // Move the car towards the end point
-        transform.Translate(direction * speed * Time.deltaTime, Space.World);
+        GetComponent<Rigidbody2D>().velocity = direction * speed;
         LookAt(points[currentPoint].position);
         // Check if the car has reached the end point
         if (Vector2.Distance(transform.position, points[currentPoint].position) < 0.1f)
