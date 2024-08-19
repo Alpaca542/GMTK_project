@@ -29,11 +29,11 @@ public class CarController : GoodThing
             GetComponent<SpriteRenderer>().material.SetColor("_Outlinecolor", Color.red);
             if (Random.Range(0, 2) == 0)
             {
-                transform.localScale = new Vector3(1.1f, 0.7f, 1);
+                transform.localScale = new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 0.7f, 1);
             }
             else
             {
-                transform.localScale = new Vector3(0.8f, 1.3f, 1);
+                transform.localScale = new Vector3(transform.localScale.x * 0.8f, transform.localScale.y * 1.3f, 1);
             }
         }
     }

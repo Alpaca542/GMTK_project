@@ -32,7 +32,7 @@ public class CarSpawnManager : MonoBehaviour
             bool isBadCar = Random.value < chanceOfBadCar;
             int randomIndex = Random.Range(0, carPrefab.Length);
             GameObject selectedCarPrefab = carPrefab[randomIndex];
-            Vector3 offMapPosition = new Vector3(transform.position.x - 1000, transform.position.y-1000, -100f);
+            Vector3 offMapPosition = new Vector3(transform.position.x - 1000, transform.position.y - 1000, -100f);
 
             GameObject newCar = Instantiate(selectedCarPrefab, offMapPosition, Quaternion.identity);
             CarController carController = newCar.GetComponent<CarController>();
