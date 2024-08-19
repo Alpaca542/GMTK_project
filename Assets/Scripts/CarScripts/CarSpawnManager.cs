@@ -24,7 +24,7 @@ public class CarSpawnManager : MonoBehaviour
         bool isBadCar = Random.value < chanceOfBadCar;
         int randomIndex = Random.Range(0, carPrefab.Length);
         GameObject selectedCarPrefab = carPrefab[randomIndex];
-        GameObject newCar = Instantiate(selectedCarPrefab, points[0].transform.position, Quaternion.identity);
+        GameObject newCar = Instantiate(selectedCarPrefab, transform.position, Quaternion.identity);
         CarController carController = newCar.GetComponent<CarController>();
         carController.points = points;
         carController.isBadCar = isBadCar;

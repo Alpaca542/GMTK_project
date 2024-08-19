@@ -99,8 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90bbc4c0775bd4aba947fcc4c84d6dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructableGrid: {fileID: 0}
   speed: 5
   vel: {x: 0, y: 0}
+  growthAmount: {x: 0.5, y: 0.5, z: 0}
 --- !u!50 &8413009842767007989
 Rigidbody2D:
   serializedVersion: 4
@@ -157,7 +159,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
