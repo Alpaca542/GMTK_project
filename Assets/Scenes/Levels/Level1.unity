@@ -16194,6 +16194,10 @@ MonoBehaviour:
   - {fileID: 497495072}
   chanceOfBadCar: 0
   spawnInterval: 3
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 576
+  detectionRadius: 3.5
 --- !u!4 &1064457895
 Transform:
   m_ObjectHideFlags: 0
@@ -16665,6 +16669,10 @@ MonoBehaviour:
   - {fileID: 1449532230}
   chanceOfBadCar: 0
   spawnInterval: 3
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 576
+  detectionRadius: 3.5
 --- !u!4 &1318234465
 Transform:
   m_ObjectHideFlags: 0

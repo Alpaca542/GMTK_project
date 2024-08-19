@@ -20,6 +20,7 @@ public class ManageGame : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         sceneName = SceneManager.GetActiveScene().name;
         mng = GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>();
         mng.LoadScores();
@@ -54,11 +55,11 @@ public class ManageGame : MonoBehaviour
     public void NextLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MenuScene"); //TODO Remove this line and activate the following lines :
+        //SceneManager.LoadScene("MenuScene"); //TODO Remove this line and activate the following lines :
 
-        /*string levelNumber = sceneName.Replace("Level", "");
+        string levelNumber = sceneName.Replace("Level", "");
         int nextLevelNumber = int.Parse(levelNumber) + 1;
-        SceneManager.LoadScene("Level"+ nextLevelNumber);*/
+        SceneManager.LoadScene("Level" + nextLevelNumber);
 
     }
 
