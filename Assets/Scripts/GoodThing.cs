@@ -22,7 +22,7 @@ public class GoodThing : MonoBehaviour
         if (other.gameObject.tag == "Tornado")
         {
             FindObjectOfType<Tornado>().Grow();
-            GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().loosePoints(myValue);
+            GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().AddToScore(myValue);
             Destroy(gameObject);
         }
     }
