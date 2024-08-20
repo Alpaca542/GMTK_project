@@ -11,7 +11,7 @@ public class soundManager : MonoBehaviour
     public bool shouldIPlayOnStart = false;
     public GameObject audioHandler;
 
-    public void PlaySoundSecond(int whichsound, float pitchrangeDOWN, float pitchrangeUP, float volume)
+    public void PlaySound(int whichsound, float pitchrangeDOWN, float pitchrangeUP, float volume)
     {
         GameObject gmb = Instantiate(audioHandler, transform.position, Quaternion.identity);
         gmb.GetComponent<AudioSource>().clip = soundslist[whichsound];

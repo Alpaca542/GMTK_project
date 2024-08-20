@@ -29,7 +29,7 @@ public class GoodThing : MonoBehaviour
             GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>().AddToScore(myValue);
             Instantiate(myParticles, transform.position, Quaternion.identity);
             CameraShaker.Instance.ShakeOnce(3f, 3f, 0.5f, 1f);
-            GetComponent<soundManager>().PlaySoundSecond(0, 0.8f, 1.2f, 1f);
+            GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 1f);
             Destroy(gameObject);
         }
     }

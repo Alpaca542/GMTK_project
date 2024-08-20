@@ -9,8 +9,8 @@ using TMPro;
 public class ManageGame : MonoBehaviour
 {
     public string sceneName;
-    public string winGameText = "Win the Game !";
-    public string loseGameText = "U lose !";
+    public string winGameText = "You cleared the whole city!";
+    public string loseGameText = "Your tornado died!";
     private ManagePoints mng;
     public GameObject pauseMenuPanel;
     public GameObject endGamePanel;
@@ -71,6 +71,7 @@ public class ManageGame : MonoBehaviour
     public void EndGameWin()
     {
         Time.timeScale = 0f;
+        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 1f);
         nextLevelButton.gameObject.SetActive(true);
         restartLevelButton.gameObject.SetActive(false);
         mng.UpdateBestScore(sceneName, mng.GetScore());
@@ -83,10 +84,14 @@ public class ManageGame : MonoBehaviour
     public void EndGameLose()
     {
         Time.timeScale = 0f;
+        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 1f);
+        nextLevelButton.gameObject.SetActive(true);
+        restartLevelButton.gameObject.SetActive(false);
+        mng.UpdateBestScore(sceneName, mng.GetScore());
+        mng.SaveCurrentLevelScore(sceneName);
         endGamePanel.SetActive(true);
-        nextLevelButton.gameObject.SetActive(false);
-        restartLevelButton.gameObject.SetActive(true);
         endGameText.text = loseGameText;
+        UnlockNewLevel();
     }
 
     private void UnlockNewLevel()

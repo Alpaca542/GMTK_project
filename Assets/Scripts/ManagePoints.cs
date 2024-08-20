@@ -5,7 +5,7 @@ using TMPro;
 
 public class ManagePoints : MonoBehaviour
 {
-    public string[] levels = { "SampleScene", "Level1", "Level2", "Level3" };
+    public string[] levels = { "CutScene", "Level1", "Level2", "Level3", "Level4", "Level5" };
     private Dictionary<string, int> bestScores = new Dictionary<string, int>();
 
     public TextMeshProUGUI currentScoreText;
@@ -76,7 +76,7 @@ public class ManagePoints : MonoBehaviour
         foreach (var level in levels)
         {
             if (PlayerPrefs.HasKey(level))
-            {       
+            {
                 bestScores[level] = PlayerPrefs.GetInt(level);
             }
         }
