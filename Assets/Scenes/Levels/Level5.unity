@@ -17670,7 +17670,7 @@ MonoBehaviour:
   - {fileID: 1887963729}
   - {fileID: 1159601707}
   - {fileID: 507068086}
-  chanceOfBadCar: 0.1
+  chanceOfBadCar: 0.3
   spawnInterval: 2
   obstacleLayer:
     serializedVersion: 2
