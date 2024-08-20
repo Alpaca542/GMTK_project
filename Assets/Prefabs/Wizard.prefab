@@ -14980,7 +14980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6017ca2fe58a46fda5f6c21db8524eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 6
   rb: {fileID: 1186160720139565999}
   wand: {fileID: 2718997196361022288}
   anim: {fileID: 0}
@@ -15043,7 +15043,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

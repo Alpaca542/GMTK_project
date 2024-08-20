@@ -18108,6 +18108,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1668072299}
+    - target: {fileID: 858429531994764718, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 222.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 858429531994764718, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 114.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 858429531994764718, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6.3773804
+      objectReference: {fileID: 0}
+    - target: {fileID: 858429531994764718, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9.929993
+      objectReference: {fileID: 0}
     - target: {fileID: 916073833088494664, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
       propertyPath: m_Camera
       value: 
@@ -18284,6 +18300,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1668072299}
+    - target: {fileID: 7786888562721402893, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_Color.a
+      value: 0.72156864
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786888562721402893, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786888562721402893, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786888562721402893, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8288620462669128786, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
       propertyPath: m_fontColor.b
       value: 1
