@@ -16708,6 +16708,58 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1668072299}
+    - target: {fileID: 4060855740728724399, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060855740728724399, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060855740728724399, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060855740728724399, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060855740728724399, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_overflowMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060855740728724399, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_enableKerning
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060855740728724399, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060855740728724399, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: checkPaddingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060855740728724399, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_enableExtraPadding
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160529865637925129, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160529865637925129, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160529865637925129, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160529865637925129, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4909272388429256557, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
       propertyPath: m_Name
       value: MainUI
@@ -16800,6 +16852,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1668072299}
+    - target: {fileID: 8288620462669128786, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288620462669128786, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288620462669128786, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8626333163667043404, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
