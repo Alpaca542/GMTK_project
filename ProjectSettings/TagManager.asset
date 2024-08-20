@@ -12,6 +12,7 @@ TagManager:
   - BigHousePoints
   - DialogueMng
   - Car
+  - Music
   layers:
   - Default
   - TransparentFX
