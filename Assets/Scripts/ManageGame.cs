@@ -62,7 +62,13 @@ public class ManageGame : MonoBehaviour
         Time.timeScale = 1f;
         string levelNumber = sceneName.Replace("Level", "");
         int nextLevelNumber = int.Parse(levelNumber) + 1;
-        SceneManager.LoadScene("Level" + nextLevelNumber);
+        if (nextLevelNumber < 6)
+        {
+            SceneManager.LoadScene("Level" + nextLevelNumber);
+        }
+        else {
+            SceneManager.LoadScene("MenuScene");
+        }
 
     }
 
@@ -123,17 +129,4 @@ public class ManageGame : MonoBehaviour
         Tornado.OnTornadoDie -= EndGameLose;
     }
 
-    /* public Slider destrBar;
-     public int AmountOfGood;
-     public int AmountOfBad;
-
-     private void Start()
-     {
-         destrBar.maxValue = AmountOfBad + AmountOfGood;
-         destrBar.value = AmountOfGood;
-     }
-     public void UpdateCounter()
-     {
-         destrBar.DOValue(AmountOfGood, (AmountOfGood - destrBar.value) / 5);
-     }*/
 }
