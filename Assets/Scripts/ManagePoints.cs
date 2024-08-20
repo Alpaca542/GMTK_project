@@ -7,9 +7,11 @@ public class ManagePoints : MonoBehaviour
 {
     public string[] levels = { "CutScene", "Level1", "Level2", "Level3", "Level4", "Level5" };
     private Dictionary<string, int> bestScores = new Dictionary<string, int>();
+    [SerializeField]private GoodThingFinder goodThingFinder;
 
     public TextMeshProUGUI currentScoreText;
     public TextMeshProUGUI bestScoreText;
+    public TextMeshProUGUI badThingsLeft;
     private int score;
 
     private void Start()
@@ -21,6 +23,7 @@ public class ManagePoints : MonoBehaviour
     {
         score += points;
         UpdateCurrentScoreText();
+        UpdateBadThingsLeft();
     }
     public int GetScore()
     {
@@ -88,6 +91,7 @@ public class ManagePoints : MonoBehaviour
         {
             currentScoreText.text = "Score: " + score.ToString();
         }
+        //UpdateBadThingsLeft();
     }
 
     private void UpdateBestScoreText(string levelName)
@@ -108,6 +112,19 @@ public class ManagePoints : MonoBehaviour
         {
             Debug.LogWarning("No best score found for level: " + levelName);
         }
+    }
+    private void OnEnable()
+    {
+        GoodThingFinder.OnGoodThingsCreated += UpdateBadThingsLeft;
+    }
+
+    private void OnDisable()
+    {
+        GoodThingFinder.OnGoodThingsCreated -= UpdateBadThingsLeft;
+    }
+
+    private void UpdateBadThingsLeft() {
+        badThingsLeft.text = "Targets Left: "+ goodThingFinder.GetBadThingsLeft().ToString();
     }
 
 }

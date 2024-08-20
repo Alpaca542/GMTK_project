@@ -7,6 +7,7 @@ public class GoodThingFinder : MonoBehaviour
 {
     [SerializeField] private static List<GoodThing> goodThings;
     public static event Action OnAllGoodThingsDestroyed;
+    public static event Action OnGoodThingsCreated;
 
     private void Start()
     {
@@ -35,7 +36,7 @@ public class GoodThingFinder : MonoBehaviour
         if (goodThing.myValue > 0 && !goodThings.Contains(goodThing))
         {
             goodThings.Add(goodThing);
-            
+            OnGoodThingsCreated?.Invoke();
         }
     }
 
@@ -44,6 +45,7 @@ public class GoodThingFinder : MonoBehaviour
         goodThings.Remove(goodThing);
         RegisterAllGoodThings(); // if somthin wasent added before do to timing
         Debug.Log("goodThing count: " + goodThings.Count);
+        OnGoodThingsCreated?.Invoke();
         CheckForAllGoodThingsDestroyed();
     }
 
@@ -58,5 +60,9 @@ public class GoodThingFinder : MonoBehaviour
     public List<GoodThing> GetGoodThings()
     {
         return new List<GoodThing>(goodThings);
+    }
+
+    public int GetBadThingsLeft() {
+        return goodThings.Count;
     }
 }

@@ -12573,8 +12573,10 @@ MonoBehaviour:
   - Level3
   - Level4
   - Level5
+  goodThingFinder: {fileID: 409808873}
   currentScoreText: {fileID: 1342963103}
   bestScoreText: {fileID: 1342963102}
+  badThingsLeft: {fileID: 1036381349}
 --- !u!4 &301426390
 Transform:
   m_ObjectHideFlags: 0
@@ -12723,6 +12725,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &409808873 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8228406853807340909, guid: 358adb6a366536d48bea775ff85fa1e9, type: 3}
+  m_PrefabInstance: {fileID: 1190636690}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776a1dfc8e0776e48b09812b810e8238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &428197663
 GameObject:
   m_ObjectHideFlags: 0
@@ -15408,6 +15421,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1036381349 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8288620462669128786, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+  m_PrefabInstance: {fileID: 1342963101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1055012684 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1288533236792002129, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
@@ -15905,6 +15929,22 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 745805534}
+    - target: {fileID: 2417489892534989609, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417489892534989609, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_margin.x
+      value: -260.39554
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417489892534989609, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_margin.z
+      value: -274.2924
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417489892534989609, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 2446305425757401183, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

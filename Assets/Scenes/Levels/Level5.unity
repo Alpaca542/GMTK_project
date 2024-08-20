@@ -17303,8 +17303,10 @@ MonoBehaviour:
   - Level3
   - Level4
   - Level5
+  goodThingFinder: {fileID: 1767678951}
   currentScoreText: {fileID: 742093371}
   bestScoreText: {fileID: 742093370}
+  badThingsLeft: {fileID: 1597827165}
 --- !u!4 &1450648401
 Transform:
   m_ObjectHideFlags: 0
@@ -17544,6 +17546,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1597827165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8288620462669128786, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+  m_PrefabInstance: {fileID: 772080530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1655526442
 GameObject:
   m_ObjectHideFlags: 0
@@ -17780,6 +17793,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1767678951 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8228406853807340909, guid: 358adb6a366536d48bea775ff85fa1e9, type: 3}
+  m_PrefabInstance: {fileID: 593380806}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776a1dfc8e0776e48b09812b810e8238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1850402978
 GameObject:
   m_ObjectHideFlags: 0
