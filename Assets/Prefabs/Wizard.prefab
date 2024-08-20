@@ -14985,6 +14985,11 @@ MonoBehaviour:
   wand: {fileID: 2718997196361022288}
   anim: {fileID: 0}
   currentReflector: {fileID: 0}
+  idleSprites:
+  - {fileID: 1186916462, guid: f68eeea27853d4d069ff7fde5e821b1b, type: 3}
+  - {fileID: 1895906440, guid: f68eeea27853d4d069ff7fde5e821b1b, type: 3}
+  - {fileID: 375899680, guid: f68eeea27853d4d069ff7fde5e821b1b, type: 3}
+  - {fileID: 1469057666, guid: f68eeea27853d4d069ff7fde5e821b1b, type: 3}
 --- !u!61 &982359325137850685
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class wizard : MonoBehaviour
 
     [Header("Debug")]
     public GameObject currentReflector;
+    public Sprite[] idleSprites;
 
     private void Start()
     {
@@ -36,6 +37,7 @@ public class wizard : MonoBehaviour
         float dirYRaw = Input.GetAxisRaw("Vertical");
         if (Mathf.Abs(dirXRaw) > 0 || Mathf.Abs(dirYRaw) > 0)
         {
+            anim.enabled = true;
             if (Mathf.Abs(dirYRaw) > 0)
             {
                 if (dirYRaw > 0)
@@ -71,6 +73,27 @@ public class wizard : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            anim.enabled = false;
+            Debug.Log(anim.GetBool("GoRight"));
+            if (anim.GetBool("GoRight"))
+            {
+                GetComponent<SpriteRenderer>().sprite = idleSprites[0];
+            }
+            if (anim.GetBool("GoUp"))
+            {
+                GetComponent<SpriteRenderer>().sprite = idleSprites[1];
+            }
+            if (anim.GetBool("GoLeft"))
+            {
+                GetComponent<SpriteRenderer>().sprite = idleSprites[2];
+            }
+            if (anim.GetBool("GoDown"))
+            {
+                GetComponent<SpriteRenderer>().sprite = idleSprites[3];
+            }
+        }
         rb.velocity = new Vector2(dirX, dirY) * speed;
     }
 
@@ -78,12 +101,18 @@ public class wizard : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            GetComponent<AudioSource>().DOFade(0.6f, 0.6f);
+            if (GetComponent<AudioSource>().volume != 0.6f)
+            {
+                GetComponent<AudioSource>().DOFade(0f, 0.6f);
+            }
             wand.SetActive(true);
         }
         else
         {
-            GetComponent<AudioSource>().DOFade(0f, 0.6f);
+            if (GetComponent<AudioSource>().volume != 0)
+            {
+                GetComponent<AudioSource>().DOFade(0f, 0.6f);
+            }
             wand.SetActive(false);
         }
     }
