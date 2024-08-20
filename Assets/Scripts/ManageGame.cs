@@ -25,20 +25,20 @@ public class ManageGame : MonoBehaviour
         mng = GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>();
         mng.LoadScores();
         mng.UpdateBestScore(sceneName, 0);
-        pauseMenuPanel.SetActive(false);
-        endGamePanel.SetActive(false);
+        pauseMenuPanel.transform.localScale = Vector3.zero;
+        endGamePanel.transform.localScale = Vector3.zero;
     }
 
     public void PauseGame()
     {
         Time.timeScale = 0f;
-        pauseMenuPanel.SetActive(true);
+        pauseMenuPanel.transform.DOScale(1.4f, 0.5f).SetUpdate(true);
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1f;
-        pauseMenuPanel.SetActive(false);
+        pauseMenuPanel.transform.DOScale(0, 0.5f).SetUpdate(true);
     }
     public void RestartLevel()
     {
@@ -72,12 +72,12 @@ public class ManageGame : MonoBehaviour
     {
         Debug.Log("EndGameWin");
         Time.timeScale = 0f;
-        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.8f);
+        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.5f);
         nextLevelButton.gameObject.SetActive(true);
         restartLevelButton.gameObject.SetActive(false);
         mng.UpdateBestScore(sceneName, mng.GetScore());
         mng.SaveCurrentLevelScore(sceneName);
-        endGamePanel.SetActive(true);
+        endGamePanel.transform.DOScale(1.4f, 0.5f).SetUpdate(true);
         endGameText.text = winGameText;
         UnlockNewLevel();
     }
@@ -86,12 +86,12 @@ public class ManageGame : MonoBehaviour
     {
         Debug.Log("EndGameLose");
         Time.timeScale = 0f;
-        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.8f);
+        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.5f);
         nextLevelButton.gameObject.SetActive(false);
         restartLevelButton.gameObject.SetActive(true);
         mng.UpdateBestScore(sceneName, mng.GetScore());
         mng.SaveCurrentLevelScore(sceneName);
-        endGamePanel.SetActive(true);
+        endGamePanel.transform.DOScale(1.4f, 0.5f).SetUpdate(true);
         endGameText.text = loseGameText;
         UnlockNewLevel();
     }

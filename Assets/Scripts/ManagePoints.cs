@@ -7,7 +7,7 @@ public class ManagePoints : MonoBehaviour
 {
     public string[] levels = { "CutScene", "Level1", "Level2", "Level3", "Level4", "Level5" };
     private Dictionary<string, int> bestScores = new Dictionary<string, int>();
-    [SerializeField]private GoodThingFinder goodThingFinder;
+    [SerializeField] private GoodThingFinder goodThingFinder;
 
     public TextMeshProUGUI currentScoreText;
     public TextMeshProUGUI bestScoreText;
@@ -89,7 +89,7 @@ public class ManagePoints : MonoBehaviour
     {
         if (currentScoreText != null)
         {
-            currentScoreText.text = "Score: " + score.ToString();
+            currentScoreText.text = "Money: " + score.ToString();
         }
         //UpdateBadThingsLeft();
     }
@@ -98,7 +98,7 @@ public class ManagePoints : MonoBehaviour
     {
         if (bestScoreText != null)
         {
-            bestScoreText.text = "PB:" + GetBestScore(levelName).ToString();
+            bestScoreText.text = "High score:" + GetBestScore(levelName).ToString();
         }
     }
     public void SaveCurrentLevelScore(string levelName)
@@ -123,8 +123,9 @@ public class ManagePoints : MonoBehaviour
         GoodThingFinder.OnGoodThingsCreated -= UpdateBadThingsLeft;
     }
 
-    private void UpdateBadThingsLeft() {
-        badThingsLeft.text = "Targets Left: "+ goodThingFinder.GetBadThingsLeft().ToString();
+    private void UpdateBadThingsLeft()
+    {
+        badThingsLeft.text = "Targets Left: " + goodThingFinder.GetBadThingsLeft().ToString();
     }
 
 }
