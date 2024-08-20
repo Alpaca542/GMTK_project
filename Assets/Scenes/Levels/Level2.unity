@@ -15885,6 +15885,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 331392397185637624, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1385002841}
+    - target: {fileID: 331392397185637624, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 690427632330038337, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -15905,6 +15913,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResumeGame
       objectReference: {fileID: 0}
+    - target: {fileID: 4027204638514831905, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1385002841}
+    - target: {fileID: 4027204638514831905, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 4744090235393146679, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -15916,6 +15932,14 @@ PrefabInstance:
     - target: {fileID: 4909272388429256557, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
       propertyPath: m_Name
       value: MainUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5208783178167352365, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1385002841}
+    - target: {fileID: 5208783178167352365, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartLevel
       objectReference: {fileID: 0}
     - target: {fileID: 5341879272152998317, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
       propertyPath: m_Pivot.x
@@ -16168,8 +16192,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
-  winGameText: Win the Game !
-  loseGameText: U lose !
   pauseMenuPanel: {fileID: 1342963105}
   endGamePanel: {fileID: 1838832874}
   endGameText: {fileID: 1055012684}

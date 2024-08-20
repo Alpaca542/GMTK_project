@@ -18735,8 +18735,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
-  winGameText: Win the Game !
-  loseGameText: U lose !
   pauseMenuPanel: {fileID: 4845131207545862073}
   endGamePanel: {fileID: 1900096959}
   endGameText: {fileID: 317499135}
@@ -19115,12 +19113,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be63d5176a4a4a11860c4065ea449c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startImmediately: 1
+  startImmediately: 0
   StopTime: 1
   typingspeed: 0.02
   sentences:
   - Let's get started!
-  - I need to hold my left mouse button to blow at the tornado
+  - I need to hold my left mouse button to blow at the tornado. The wind follows
+    my cursor
   - Everything wrong scaled already has a red outline
   - For destroying good stuff I'll lose money, so I need to be careful
   - The tornado shrinks over time, but when it eats stuff it grows

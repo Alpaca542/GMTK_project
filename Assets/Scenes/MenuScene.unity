@@ -151,7 +151,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac570b18563097547b0d278082e6541e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonList: []
+  buttonList:
+  - {fileID: 1670564149}
+  - {fileID: 720311395}
+  - {fileID: 584048584}
+  - {fileID: 1396646602}
+  - {fileID: 896777955}
   levelButtonLay: {fileID: 31635560}
   startAnim: {fileID: 1280868419}
   highScoreTexts:
@@ -1882,6 +1887,7 @@ GameObject:
   - component: {fileID: 943712646}
   - component: {fileID: 943712648}
   - component: {fileID: 943712647}
+  - component: {fileID: 943712649}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1905,7 +1911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000068665, y: -125.04999}
+  m_AnchoredPosition: {x: 0.000061035, y: -162}
   m_SizeDelta: {x: 1012.7, y: 157.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &943712647
@@ -1928,7 +1934,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Architect of Windsheer
+  m_text: Architect of Windshire
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9fae3271bcb34b0ea0ca08f14b5431f, type: 2}
   m_sharedMaterial: {fileID: -2440584878311533887, guid: d9fae3271bcb34b0ea0ca08f14b5431f, type: 2}
@@ -1955,8 +1961,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 120
+  m_fontSizeBase: 120
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2005,6 +2011,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943712645}
   m_CullTransparentMesh: 1
+--- !u!95 &943712649
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943712645}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76195f8a0803a49f1a5bf6bb10750980, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1003243811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,7 +2223,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a7e9684541342470d85cc1f779cfae44, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4191,7 +4218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 164}
+  m_AnchoredPosition: {x: 0, y: 144}
   m_SizeDelta: {x: 464.9115, y: 119.2775}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1975331857

@@ -17,6 +17,7 @@ public class MenuManager : MonoBehaviour
     {
         ButtonsToArray();
         int unlookedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        Debug.Log(unlookedLevel);
         for (int i = 0; i < buttonList.Length; i++)
         {
             if (i < unlookedLevel)
@@ -33,7 +34,8 @@ public class MenuManager : MonoBehaviour
             {
                 highScoreTexts[i].text = "High Score: " + highScore.ToString();
             }
-            else {
+            else
+            {
                 highScoreTexts[i].text = "";
             }
 
