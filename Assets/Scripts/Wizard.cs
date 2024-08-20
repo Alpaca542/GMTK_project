@@ -76,7 +76,6 @@ public class wizard : MonoBehaviour
         else
         {
             anim.enabled = false;
-            Debug.Log(anim.GetBool("GoRight"));
             if (anim.GetBool("GoRight"))
             {
                 GetComponent<SpriteRenderer>().sprite = idleSprites[0];
