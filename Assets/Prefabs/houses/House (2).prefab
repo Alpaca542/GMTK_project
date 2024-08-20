@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 999053631284358818}
   - component: {fileID: 7115449012508264983}
   - component: {fileID: 1152973923358388912}
+  - component: {fileID: -1619697787794982791}
   m_Layer: 8
   m_Name: House (2)
   m_TagString: Untagged
@@ -157,3 +158,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1.7986107}
   m_EdgeRadius: 0
+--- !u!114 &-1619697787794982791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326810600855600771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790cfbbb0925b42bbb58877e60c71590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundslist:
+  - {fileID: 8300000, guid: aebe5f8ee5a1741ffbc6bc73ea2cd700, type: 3}
+  shouldILoop: 0
+  amIPlaying: 0
+  shouldIPlayOnStart: 0
+  audioHandler: {fileID: 6249032729229455238, guid: 1e7aaad14fc6b4b90ad5d8c9812895e8, type: 3}

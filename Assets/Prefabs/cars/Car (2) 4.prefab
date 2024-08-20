@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4982358235783703349}
   - component: {fileID: 3716409363819914131}
   - component: {fileID: 2345909214448990119}
+  - component: {fileID: -249748919131076044}
   m_Layer: 6
   m_Name: Car (2) 4
   m_TagString: mngPoints
@@ -52,7 +53,7 @@ MonoBehaviour:
   ScaleFactor: {x: 0, y: 0, z: 0}
   changeSize: 0.2
   changeMas: 0.2
-  myParticles: {fileID: 0}
+  myParticles: {fileID: 7455558190223045775, guid: bb614c6b6f7c142f080a0c4137aff524, type: 3}
   myValue: 0
   speed: 4
   detectionRange: 3.5
@@ -185,6 +186,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18, y: 0.33}
   m_EdgeRadius: 0
+--- !u!114 &-249748919131076044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5073472746712754107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790cfbbb0925b42bbb58877e60c71590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundslist:
+  - {fileID: 8300000, guid: 4c9ccb1a656a04669a717b5b5a8f6dee, type: 3}
+  shouldILoop: 0
+  amIPlaying: 0
+  shouldIPlayOnStart: 0
+  audioHandler: {fileID: 6249032729229455238, guid: 1e7aaad14fc6b4b90ad5d8c9812895e8, type: 3}
 --- !u!1 &7959342237807861184
 GameObject:
   m_ObjectHideFlags: 0
