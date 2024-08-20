@@ -69,7 +69,7 @@ public class House : GoodThing
 
             Vector2 directionAwayFromTornado = (spawnPosition - tornado.GetComponent<Rigidbody2D>().position).normalized;
 
-            person.AddComponent<Person>().Initialize(directionAwayFromTornado, runSpeed);
+            person.GetComponent<Person>().Initialize(directionAwayFromTornado, runSpeed);
         }
     }
 
