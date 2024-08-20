@@ -31,7 +31,12 @@ public class GenerateMap : MonoBehaviour
 
         foreach (GameObject gmb in places2)
         {
-            Instantiate(BigHouses[Random.Range(0, BigHouses.Length)], gmb.transform.position, gmb.transform.rotation);
+            bool isBadHouse = Random.value < chanceOfBadHouse;
+
+            int myValue = isBadHouse ? 100 : -50;
+
+            House newHouse = House.InstantiateHouse(BigHouses[Random.Range(0, BigHouses.Length)], gmb.transform.position, gmb.transform.rotation, myValue);
+            newHouse.Bad = isBadHouse;
         }
 
         yield return new WaitForEndOfFrame();
