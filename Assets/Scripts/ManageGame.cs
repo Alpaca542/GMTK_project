@@ -21,11 +21,6 @@ public class ManageGame : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
-        if (!PlayerPrefs.HasKey("usedTutorial"))
-        {
-            PlayerPrefs.SetInt("usedTutorial", 1);
-            dlgMng.StartMainLine();
-        }
         sceneName = SceneManager.GetActiveScene().name;
         mng = GameObject.FindGameObjectWithTag("mngPoints").GetComponent<ManagePoints>();
         mng.LoadScores();
@@ -66,7 +61,8 @@ public class ManageGame : MonoBehaviour
         {
             SceneManager.LoadScene("Level" + nextLevelNumber);
         }
-        else {
+        else
+        {
             SceneManager.LoadScene("MenuScene");
         }
 
@@ -90,7 +86,7 @@ public class ManageGame : MonoBehaviour
     {
         Debug.Log("EndGameLose");
         Time.timeScale = 0f;
-        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.8f); 
+        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.8f);
         nextLevelButton.gameObject.SetActive(false);
         restartLevelButton.gameObject.SetActive(true);
         mng.UpdateBestScore(sceneName, mng.GetScore());

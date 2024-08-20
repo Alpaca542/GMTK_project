@@ -35,9 +35,19 @@ public class DialogueScript : MonoBehaviour
     public GameObject animStart;
     public GameObject animEnd;
 
+    public bool secscen;
+
     IEnumerator coroutine;
     private void Start()
     {
+        if (secscen)
+        {
+            if (!PlayerPrefs.HasKey("usedTutorial"))
+            {
+                PlayerPrefs.SetInt("usedTutorial", 1);
+                startImmediately = true;
+            }
+        }
         Time.timeScale = 1f;
         if (startImmediately)
         {
