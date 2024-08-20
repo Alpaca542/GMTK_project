@@ -9,8 +9,8 @@ using TMPro;
 public class ManageGame : MonoBehaviour
 {
     public string sceneName;
-    public string winGameText = "You cleared the whole city!";
-    public string loseGameText = "Your tornado died!";
+    private string winGameText = "You cleared the whole city!";
+    private string loseGameText = "Your tornado died!";
     private ManagePoints mng;
     public GameObject pauseMenuPanel;
     public GameObject endGamePanel;
@@ -21,7 +21,7 @@ public class ManageGame : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
-        if (PlayerPrefs.HasKey("usedTutorial"))
+        if (!PlayerPrefs.HasKey("usedTutorial"))
         {
             PlayerPrefs.SetInt("usedTutorial", 1);
             dlgMng.StartMainLine();
@@ -71,7 +71,7 @@ public class ManageGame : MonoBehaviour
     public void EndGameWin()
     {
         Time.timeScale = 0f;
-        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 1f);
+        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.8f);
         nextLevelButton.gameObject.SetActive(true);
         restartLevelButton.gameObject.SetActive(false);
         mng.UpdateBestScore(sceneName, mng.GetScore());
@@ -84,7 +84,7 @@ public class ManageGame : MonoBehaviour
     public void EndGameLose()
     {
         Time.timeScale = 0f;
-        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 1f);
+        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.8f);
         nextLevelButton.gameObject.SetActive(true);
         restartLevelButton.gameObject.SetActive(false);
         mng.UpdateBestScore(sceneName, mng.GetScore());
