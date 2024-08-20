@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data.Common;
-using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
+using DG.Tweening;
 
 public class wizard : MonoBehaviour
 {
@@ -82,10 +78,12 @@ public class wizard : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            GetComponent<AudioSource>().DOFade(0.6f, 0.6f);
             wand.SetActive(true);
         }
         else
         {
+            GetComponent<AudioSource>().DOFade(0f, 0.6f);
             wand.SetActive(false);
         }
     }

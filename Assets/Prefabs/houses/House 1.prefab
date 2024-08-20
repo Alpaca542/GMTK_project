@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7618038984885140244}
   - component: {fileID: 3042255754718288344}
   - component: {fileID: 3169257938317526653}
+  - component: {fileID: 2523204981235235495}
   m_Layer: 8
   m_Name: House 1
   m_TagString: Untagged
@@ -101,7 +102,7 @@ MonoBehaviour:
   ScaleFactor: {x: 0, y: 0, z: 0}
   changeSize: 0.2
   changeMas: 0.2
-  myParticles: {fileID: 985916674335616835, guid: 53ed6774128794b539513aa364026af7, type: 3}
+  myParticles: {fileID: 6827274306620966414, guid: 35cbcfd9e6c53464a99ca946644f82c5, type: 3}
   myValue: 0
   detectionRadius: 5
   personPrefab: {fileID: 4451197444773612049, guid: 912f82c8403abc64080efbc47fc9048f, type: 3}
@@ -144,7 +145,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.4657154}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.49999988, y: 0.1690216}
@@ -155,5 +156,23 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 3}
+  m_Size: {x: 4, y: 2.0231361}
   m_EdgeRadius: 0
+--- !u!114 &2523204981235235495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191824255814741286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790cfbbb0925b42bbb58877e60c71590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundslist:
+  - {fileID: 8300000, guid: aebe5f8ee5a1741ffbc6bc73ea2cd700, type: 3}
+  shouldILoop: 0
+  amIPlaying: 0
+  shouldIPlayOnStart: 0
+  audioHandler: {fileID: 6249032729229455238, guid: 1e7aaad14fc6b4b90ad5d8c9812895e8, type: 3}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7311504476152029787}
   - component: {fileID: 4332850632620411360}
   - component: {fileID: 9111231430735337369}
+  - component: {fileID: -1756390433377541803}
   m_Layer: 8
   m_Name: House (1)
   m_TagString: Untagged
@@ -101,7 +102,7 @@ MonoBehaviour:
   ScaleFactor: {x: 0, y: 0, z: 0}
   changeSize: 0.2
   changeMas: 0.2
-  myParticles: {fileID: 985916674335616835, guid: 53ed6774128794b539513aa364026af7, type: 3}
+  myParticles: {fileID: 9050027356381768829, guid: 208b323e5baf24ea7b7ba9970815ff55, type: 3}
   myValue: 0
   detectionRadius: 5
   personPrefab: {fileID: 4451197444773612049, guid: 912f82c8403abc64080efbc47fc9048f, type: 3}
@@ -157,3 +158,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 2.0064926}
   m_EdgeRadius: 0
+--- !u!114 &-1756390433377541803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926487134692866264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790cfbbb0925b42bbb58877e60c71590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundslist:
+  - {fileID: 8300000, guid: aebe5f8ee5a1741ffbc6bc73ea2cd700, type: 3}
+  shouldILoop: 0
+  amIPlaying: 0
+  shouldIPlayOnStart: 0
+  audioHandler: {fileID: 6249032729229455238, guid: 1e7aaad14fc6b4b90ad5d8c9812895e8, type: 3}

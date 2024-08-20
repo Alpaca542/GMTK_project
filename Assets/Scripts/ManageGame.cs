@@ -9,8 +9,8 @@ using TMPro;
 public class ManageGame : MonoBehaviour
 {
     public string sceneName;
-    public string winGameText = "Win the Game !";
-    public string loseGameText = "U lose !";
+    private string winGameText = "You cleared the whole city!";
+    private string loseGameText = "Your tornado died!";
     private ManagePoints mng;
     public GameObject pauseMenuPanel;
     public GameObject endGamePanel;
@@ -21,7 +21,7 @@ public class ManageGame : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
-        if (PlayerPrefs.HasKey("usedTutorial"))
+        if (!PlayerPrefs.HasKey("usedTutorial"))
         {
             PlayerPrefs.SetInt("usedTutorial", 1);
             dlgMng.StartMainLine();
@@ -60,8 +60,6 @@ public class ManageGame : MonoBehaviour
     public void NextLevel()
     {
         Time.timeScale = 1f;
-        //SceneManager.LoadScene("MenuScene"); //TODO Remove this line and activate the following lines :
-
         string levelNumber = sceneName.Replace("Level", "");
         int nextLevelNumber = int.Parse(levelNumber) + 1;
         SceneManager.LoadScene("Level" + nextLevelNumber);
@@ -70,7 +68,9 @@ public class ManageGame : MonoBehaviour
 
     public void EndGameWin()
     {
+        Debug.Log("EndGameWin");
         Time.timeScale = 0f;
+        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.8f);
         nextLevelButton.gameObject.SetActive(true);
         restartLevelButton.gameObject.SetActive(false);
         mng.UpdateBestScore(sceneName, mng.GetScore());
@@ -82,11 +82,16 @@ public class ManageGame : MonoBehaviour
 
     public void EndGameLose()
     {
+        Debug.Log("EndGameLose");
         Time.timeScale = 0f;
-        endGamePanel.SetActive(true);
+        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.8f); 
         nextLevelButton.gameObject.SetActive(false);
         restartLevelButton.gameObject.SetActive(true);
+        mng.UpdateBestScore(sceneName, mng.GetScore());
+        mng.SaveCurrentLevelScore(sceneName);
+        endGamePanel.SetActive(true);
         endGameText.text = loseGameText;
+        UnlockNewLevel();
     }
 
     private void UnlockNewLevel()
@@ -98,7 +103,8 @@ public class ManageGame : MonoBehaviour
         else
         {
             string levelNumber = sceneName.Replace("Level", "");
-            int unlockedLevel = int.Parse(levelNumber);
+            int unlockedLevel = int.Parse(levelNumber) + 1;
+            Debug.Log("UnlockedLevel" + unlockedLevel);
             PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel);
             PlayerPrefs.Save();
         }
