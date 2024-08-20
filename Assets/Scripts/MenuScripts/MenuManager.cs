@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class MenuManager : MonoBehaviour
     public GameObject levelButtonLay;
 
     public GameObject startAnim;
+    public TMP_Text[] highScoreTexts;
 
     private void Awake()
     {
@@ -25,6 +27,16 @@ public class MenuManager : MonoBehaviour
             {
                 buttonList[i].interactable = false;
             }
+            string levelName = "Level" + (i + 1);
+            int highScore = PlayerPrefs.GetInt(levelName, 0);
+            if (highScore > 0)
+            {
+                highScoreTexts[i].text = "High Score: " + highScore.ToString();
+            }
+            else {
+                highScoreTexts[i].text = "";
+            }
+
         }
     }
 
