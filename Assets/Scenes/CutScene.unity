@@ -15226,6 +15226,7 @@ MonoBehaviour:
     m_Bits: 0
   detectionRadius: 3.5
   maxCars: 4
+  carList: []
 --- !u!4 &663572723
 Transform:
   m_ObjectHideFlags: 0
