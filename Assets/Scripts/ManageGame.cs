@@ -103,7 +103,8 @@ public class ManageGame : MonoBehaviour
         else
         {
             string levelNumber = sceneName.Replace("Level", "");
-            int unlockedLevel = int.Parse(levelNumber);
+            int unlockedLevel = int.Parse(levelNumber) + 1;
+            Debug.Log("UnlockedLevel" + unlockedLevel);
             PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel);
             PlayerPrefs.Save();
         }
