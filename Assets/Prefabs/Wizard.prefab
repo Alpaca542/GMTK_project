@@ -9957,7 +9957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e2ca39bc8984955bd5f290c9439012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 500
+  strength: 700
 --- !u!1 &3195219268370332915
 GameObject:
   m_ObjectHideFlags: 0
@@ -14980,11 +14980,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6017ca2fe58a46fda5f6c21db8524eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   rb: {fileID: 1186160720139565999}
   wand: {fileID: 2718997196361022288}
   anim: {fileID: 0}
-  mywand: {fileID: 0}
   currentReflector: {fileID: 0}
 --- !u!61 &982359325137850685
 BoxCollider2D:
