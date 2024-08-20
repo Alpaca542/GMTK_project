@@ -15357,6 +15357,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1055012684 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1288533236792002129, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+  m_PrefabInstance: {fileID: 1342963101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1144302120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15796,6 +15807,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1841127552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1291034507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 331392397185637624, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+  m_PrefabInstance: {fileID: 1342963101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1342963101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15953,47 +15975,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
---- !u!114 &1342963102 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6634223637674678905, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
-  m_PrefabInstance: {fileID: 1342963101}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1342963103 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4744090235393146679, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
-  m_PrefabInstance: {fileID: 1342963101}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1342963104 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4458603099440282184, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
-  m_PrefabInstance: {fileID: 1342963101}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1342963105 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4845131208977967957, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
-  m_PrefabInstance: {fileID: 1342963101}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1342963106 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1218328440574851973, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
   m_PrefabInstance: {fileID: 1342963101}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1375287321
@@ -16113,10 +16097,10 @@ MonoBehaviour:
   winGameText: Win the Game !
   loseGameText: U lose !
   pauseMenuPanel: {fileID: 1342963105}
-  endGamePanel: {fileID: 1342963106}
-  endGameText: {fileID: 1342963104}
-  nextLevelButton: {fileID: 1342963103}
-  restartLevelButton: {fileID: 1342963102}
+  endGamePanel: {fileID: 1838832874}
+  endGameText: {fileID: 1055012684}
+  nextLevelButton: {fileID: 1291034507}
+  restartLevelButton: {fileID: 1441552899}
   dlgMng: {fileID: 0}
 --- !u!4 &1385002842
 Transform:
@@ -16599,6 +16583,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1441552899 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5208783178167352365, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+  m_PrefabInstance: {fileID: 1342963101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1586959859
 GameObject:
   m_ObjectHideFlags: 0
@@ -17340,6 +17335,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1838832874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1333698736568887438, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+  m_PrefabInstance: {fileID: 1342963101}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1841127550
 GameObject:
   m_ObjectHideFlags: 0
@@ -17396,6 +17396,7 @@ MonoBehaviour:
     m_Bits: 584
   detectionRadius: 3.5
   maxCars: 4
+  carList: []
 --- !u!4 &1841127552
 Transform:
   m_ObjectHideFlags: 0
