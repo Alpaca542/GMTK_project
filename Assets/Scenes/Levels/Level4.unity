@@ -2090,7 +2090,7 @@ MonoBehaviour:
   - {fileID: 1876455392}
   - {fileID: 722774579}
   - {fileID: 865881748}
-  chanceOfBadCar: 0.2
+  chanceOfBadCar: 0.5
   spawnInterval: 3
   obstacleLayer:
     serializedVersion: 2
@@ -4569,7 +4569,7 @@ MonoBehaviour:
   - {fileID: 1018578875}
   - {fileID: 1975781564}
   - {fileID: 627461455}
-  chanceOfBadCar: 0.2
+  chanceOfBadCar: 0.5
   spawnInterval: 5
   obstacleLayer:
     serializedVersion: 2
