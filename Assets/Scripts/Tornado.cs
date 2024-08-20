@@ -38,14 +38,14 @@ public class Tornado : MonoBehaviour
             OnTornadoDie?.Invoke();
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "bounceOf")
-        {
-            rb.velocity = Vector2.Reflect(vel, collision.GetContact(0).normal).normalized * speed;
-            vel = rb.velocity;
-        }
-    }
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.tag == "bounceOf")
+    //     {
+    //         rb.velocity = Vector2.Reflect(vel, collision.GetContact(0).normal).normalized * speed;
+    //         vel = rb.velocity;
+    //     }
+    // }
 
     public void Grow()
     {
