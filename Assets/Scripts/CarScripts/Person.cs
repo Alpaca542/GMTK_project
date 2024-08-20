@@ -87,7 +87,7 @@ public class Person : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Destroy the person if they hit anything that isn't the player
-        if (!other.CompareTag("Player"))
+        if (!other.CompareTag("Player") && !other.CompareTag("InvWalls"))
         {
             Instantiate(myParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
