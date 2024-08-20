@@ -19194,10 +19194,20 @@ MonoBehaviour:
   StopTime: 1
   typingspeed: 0.02
   sentences:
-  - Heyyyyy! Here is the tutorial
+  - Heyyyyy! Hold your left mouse button to blow
+  - When you blow at the tornado it moves
+  - You need to destroy all the wrong sized houses and cars(they have red outline)
+  - For destroying good stuff you'll lose money, for destroying bad - gaim
+  - The tornado shrinks over time, but when it eats stuff it grows
+  - Have fun(it's a playtesting tutorial, not a real one)
   faces:
   - {fileID: 1502975157, guid: f68eeea27853d4d069ff7fde5e821b1b, type: 3}
-  stopindexes: 02000000
+  - {fileID: 1502975157, guid: f68eeea27853d4d069ff7fde5e821b1b, type: 3}
+  - {fileID: 1502975157, guid: f68eeea27853d4d069ff7fde5e821b1b, type: 3}
+  - {fileID: 1502975157, guid: f68eeea27853d4d069ff7fde5e821b1b, type: 3}
+  - {fileID: 1502975157, guid: f68eeea27853d4d069ff7fde5e821b1b, type: 3}
+  - {fileID: 1502975157, guid: f68eeea27853d4d069ff7fde5e821b1b, type: 3}
+  stopindexes: 06000000
   Display: {fileID: 1771255391}
   Display2: {fileID: 2125578153}
   btnContinue: {fileID: 1311632935}
