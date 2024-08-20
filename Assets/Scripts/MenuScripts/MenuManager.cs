@@ -61,7 +61,14 @@ public class MenuManager : MonoBehaviour
     {
         startAnim.SetActive(true);
         yield return new WaitForSecondsRealtime(1f);
-        SceneManager.LoadScene("Level" + level);
+        if (level == 1)
+        {
+            SceneManager.LoadScene("CutScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("Level" + level);
+        }
     }
 
     private void ButtonsToArray()
