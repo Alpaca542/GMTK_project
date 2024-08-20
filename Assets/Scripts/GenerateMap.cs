@@ -23,7 +23,7 @@ public class GenerateMap : MonoBehaviour
         {
             bool isBadHouse = Random.value < chanceOfBadHouse;
 
-            int myValue = isBadHouse ? 100 : -50;
+            int myValue = isBadHouse ? 100 : -100;
 
             House newHouse = House.InstantiateHouse(houses[Random.Range(0, houses.Length)], gmb.transform.position, gmb.transform.rotation, myValue);
             newHouse.Bad = isBadHouse;
@@ -33,7 +33,7 @@ public class GenerateMap : MonoBehaviour
         {
             bool isBadHouse = Random.value < chanceOfBadHouse;
 
-            int myValue = isBadHouse ? 100 : -50;
+            int myValue = isBadHouse ? 100 : -100;
 
             House newHouse = House.InstantiateHouse(BigHouses[Random.Range(0, BigHouses.Length)], gmb.transform.position, gmb.transform.rotation, myValue);
             newHouse.Bad = isBadHouse;

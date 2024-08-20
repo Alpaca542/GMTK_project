@@ -17,7 +17,7 @@ public class CarSpawnManager : MonoBehaviour
     [Header("Car Limit Settings")]
     [SerializeField] private int maxCars = 4;
     private int currentCarCount = 0;
-    [SerializeField]private List<GameObject> carList = new List<GameObject>();
+    [SerializeField] private List<GameObject> carList = new List<GameObject>();
     private List<GameObject> cars = new List<GameObject>();
     private readonly object listLock = new object();
     private readonly object carListLock = new object();
@@ -43,10 +43,11 @@ public class CarSpawnManager : MonoBehaviour
             carController.isBadCar = isBadCar;
             if (isBadCar)
             {
-                carController.myValue = +40;
+                carController.myValue = +50;
             }
-            else {
-                carController.myValue = -20;
+            else
+            {
+                carController.myValue = -40;
             }
 
             cars.Add(newCar);
@@ -71,7 +72,7 @@ public class CarSpawnManager : MonoBehaviour
             if (carList.Count > 0)
             {
                 GameObject car = carList[0];
-                carList.RemoveAt(0); 
+                carList.RemoveAt(0);
                 MoveCarToStart(car);
             }
         }
@@ -84,8 +85,8 @@ public class CarSpawnManager : MonoBehaviour
         if (obstacle == null)
         {
             // If there's no obstacle, move the car to the start point and start its movement
-            car.transform.position = points[0].position; 
-            car.GetComponent<CarController>().StartCar(); 
+            car.transform.position = points[0].position;
+            car.GetComponent<CarController>().StartCar();
         }
         else
         {
@@ -113,7 +114,7 @@ public class CarSpawnManager : MonoBehaviour
             if (carList.Count > 0)
             {
                 GameObject car = carList[0];
-                carList.RemoveAt(0); 
+                carList.RemoveAt(0);
                 MoveCarToStart(car);
             }
         }
