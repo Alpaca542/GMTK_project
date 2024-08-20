@@ -16503,6 +16503,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &742093370 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4160529865637925129, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+  m_PrefabInstance: {fileID: 772080530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &742093371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4060855740728724399, guid: ca998cd6b6a3e124588576f263a96bbe, type: 3}
+  m_PrefabInstance: {fileID: 772080530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &772080530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17189,8 +17211,10 @@ MonoBehaviour:
   - Level1
   - Level2
   - Level3
-  currentScoreText: {fileID: 0}
-  bestScoreText: {fileID: 0}
+  - Level4
+  - Level5
+  currentScoreText: {fileID: 742093371}
+  bestScoreText: {fileID: 742093370}
 --- !u!4 &1450648401
 Transform:
   m_ObjectHideFlags: 0

@@ -9,6 +9,6 @@ public class TimerManager : MonoBehaviour
     void Update()
     {
         finaltime += Time.deltaTime;
-        GetComponent<TMP_Text>().text = (Mathf.Round(finaltime * 100) / 100).ToString();
+        GetComponent<TMP_Text>().text = "Your time: " + (Mathf.Round(finaltime * 100) / 100).ToString();
     }
 }

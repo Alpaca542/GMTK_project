@@ -36,7 +36,7 @@ public class GenerateMap : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        
+
         GoodThingFinder goodThingFinder = FindObjectOfType<GoodThingFinder>();
         if (goodThingFinder != null)
         {
