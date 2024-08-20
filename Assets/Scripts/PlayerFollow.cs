@@ -14,7 +14,7 @@ public class playerfollow : MonoBehaviour
         float distY = Mathf.Abs(players[1].position.y - players[0].position.y);
         float resolution = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight, 0)).x / Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight, 0)).x;
         float dist = Mathf.Max(distY, distX * resolution);
-        Camera.main.orthographicSize = Mathf.Clamp(dist / 2 + 1, 5f, 100f);
+        Camera.main.orthographicSize = Mathf.Clamp(dist / 2 + 1, 8f, 100f);
 
         Vector3 centerPoint = players[0].position + (players[1].position - players[0].position) / 2f;
         centerPoint.z = centerPoint.z - 10;
