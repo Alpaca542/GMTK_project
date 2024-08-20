@@ -105,7 +105,7 @@ MonoBehaviour:
   destructableGrid: {fileID: 0}
   speed: 5
   vel: {x: 0, y: 0}
-  growthAmount: {x: 0.2, y: 0.2, z: 0}
+  growthAmount: {x: 0.3, y: 0.3, z: 0}
 --- !u!50 &8413009842767007989
 Rigidbody2D:
   serializedVersion: 4
