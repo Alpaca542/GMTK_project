@@ -60,8 +60,6 @@ public class ManageGame : MonoBehaviour
     public void NextLevel()
     {
         Time.timeScale = 1f;
-        //SceneManager.LoadScene("MenuScene"); //TODO Remove this line and activate the following lines :
-
         string levelNumber = sceneName.Replace("Level", "");
         int nextLevelNumber = int.Parse(levelNumber) + 1;
         SceneManager.LoadScene("Level" + nextLevelNumber);
@@ -70,6 +68,7 @@ public class ManageGame : MonoBehaviour
 
     public void EndGameWin()
     {
+        Debug.Log("EndGameWin");
         Time.timeScale = 0f;
         GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.8f);
         nextLevelButton.gameObject.SetActive(true);
@@ -83,10 +82,11 @@ public class ManageGame : MonoBehaviour
 
     public void EndGameLose()
     {
+        Debug.Log("EndGameLose");
         Time.timeScale = 0f;
-        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.8f);
-        nextLevelButton.gameObject.SetActive(true);
-        restartLevelButton.gameObject.SetActive(false);
+        GetComponent<soundManager>().PlaySound(0, 0.8f, 1.2f, 0.8f); 
+        nextLevelButton.gameObject.SetActive(false);
+        restartLevelButton.gameObject.SetActive(true);
         mng.UpdateBestScore(sceneName, mng.GetScore());
         mng.SaveCurrentLevelScore(sceneName);
         endGamePanel.SetActive(true);
